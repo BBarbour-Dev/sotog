@@ -18,6 +18,6 @@ collections:
           label: "Featured Image",
           name: "thumbnail",
           widget: "image",
-          required: "false",
+          required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
