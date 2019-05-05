@@ -28,9 +28,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - label: "Images"
-        name: "images"
-        widget: "image"
-        media_library:
-          config:
-            multiple: true
+      - {
+          label: "Images",
+          name: "images",
+          widget: "image",
+          allow_multiple: true,
+        }
