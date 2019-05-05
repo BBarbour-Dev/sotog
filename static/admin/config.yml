@@ -27,5 +27,10 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-    - { label: "Title", name: "title", widget: "string" }
-    - {label: "Images", name: "images", widget: "image", media_library: config: multiple: true }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
