@@ -21,11 +21,11 @@ collections:
           required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
-   - name: chapters
-     label: Chapters
-     folder: chapters
-     create: true
-     slug: "{{slug}}"
-     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - {label: "Images", name: "images", widget: "image", media_library: config: multiple: true }
+  - name: chapters
+    label: Chapters
+    folder: chapters
+    create: true
+    slug: "{{slug}}"
+    fields:
+    - { label: "Title", name: "title", widget: "string" }
+    - {label: "Images", name: "images", widget: "image", media_library: config: multiple: true }
