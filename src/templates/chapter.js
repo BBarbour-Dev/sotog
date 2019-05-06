@@ -12,14 +12,16 @@ const Chapter = ({ data }) => {
 }
 
 export const chapterQuery = graphql`
-  {
-    markdownRemark {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       fileAbsolutePath
       frontmatter {
         title
-        images
+        date(formatString: "MMMM DD, YYYY")
+        thumbnail
       }
+      html
     }
   }
 `

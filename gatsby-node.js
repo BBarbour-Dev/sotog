@@ -1,8 +1,25 @@
 const path = require("path")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const slugify = path => {
+const container = path => {
   const firstSplit = path.split("/")
-  return firstSplit[firstSplit.length - 1].split(".")[0]
+  return firstSplit[firstSplit.length - 2]
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({
+      node,
+      getNode,
+      basePath: `${__dirname}`,
+    })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/${container(node.fileAbsolutePath)}${slug}`,
+    })
+  }
 }
 
 exports.createPages = ({ actions, graphql }) => {
@@ -15,7 +32,9 @@ exports.createPages = ({ actions, graphql }) => {
       allMarkdownRemark {
         edges {
           node {
-            fileAbsolutePath
+            fields {
+              slug
+            }
             frontmatter {
               type
             }
@@ -30,19 +49,24 @@ exports.createPages = ({ actions, graphql }) => {
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const { frontmatter } = node
+      const { fields } = node
 
       if (frontmatter.type === "posts") {
         createPage({
-          path: `/posts/${slugify(node.fileAbsolutePath)}`,
+          path: fields.slug,
           component: postTemplate,
-          context: {}, // additional data can be passed via context
+          context: {
+            slug: fields.slug,
+          }, // additional data can be passed via context
         })
       }
       if (frontmatter.type === "chapters") {
         createPage({
-          path: `/chapters/${slugify(node.fileAbsolutePath)}`,
+          path: fields.slug,
           component: chapterTemplate,
-          context: {},
+          context: {
+            slug: fields.slug,
+          },
         })
       }
     })

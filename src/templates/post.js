@@ -15,8 +15,8 @@ const Post = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query {
-    markdownRemark {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       fileAbsolutePath
       frontmatter {
@@ -28,4 +28,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
 export default Post
