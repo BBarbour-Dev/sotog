@@ -1,6 +1,7 @@
 ---
 title: First Post
 date: 2019-05-05T11:49:30.518Z
+type: posts
 ---
 
 Cupidatat id aliquip quis id. Consequat laborum amet ea id ea. Ex qui eiusmod ipsum proident nostrud incididunt esse. Consectetur aute aliquip reprehenderit ad duis nulla tempor mollit dolor fugiat dolor.
