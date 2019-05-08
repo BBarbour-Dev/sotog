@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { FaAutoprefixer } from "react-icons/fa"
 
 const LatestPostLanding = () => {
   const data = useStaticQuery(graphql`

@@ -5,7 +5,7 @@ const Nav = () => {
   const [burgerOpen, setBurgerOpen] = useState(false)
   const burgerActive = burgerOpen ? "is-active" : ""
   return (
-    <nav className="navbar is-link">
+    <nav className="navbar is-link no-radius">
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item eagle" to="/">

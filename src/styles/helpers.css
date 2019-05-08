@@ -26,8 +26,7 @@
 
 .hero-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-    url("/static/Astrid for site-8623bc0c5d9027bb8125bbe86e078ff6.jpg")
-      no-repeat center center fixed;
+    url("./landingastrid.jpg") no-repeat center center fixed;
   background-size: cover;
   max-height: 100vh;
 }
@@ -41,4 +40,8 @@
   margin-top: 25vh;
   display: flex;
   justify-content: center;
+}
+
+.no-radius {
+  border-radius: 0px;
 }
