@@ -36,19 +36,23 @@ const LatestPostLanding = () => {
     >
       <div className="columns is-centered">
         <div style={{ margin: "1rem" }} className="column is-three-fifths">
-          <h2 className="is-size-4 is-uppercase has-text-weight-bold">
-            Lastest Post
+          <h2 className="is-size-4 is-uppercase has-text-weight-bold eagle">
+            Latest Updates
           </h2>
           <p style={{ marginTop: "1rem" }}>
             <strong className="has-text-white-bis">
               <span className="is-size-5">{latestPost.frontmatter.title}</span>
-            </strong>{" "}
-            - {latestPost.frontmatter.date}
+            </strong>
           </p>
           <p>
-            {latestPost.excerpt}{" "}
-            <Link className="has-text-success" to={latestPost.fields.slug}>
-              <strong>Read Post</strong>
+            {latestPost.frontmatter.date} - {latestPost.excerpt}
+          </p>
+          <p className="has-text-right">
+            <Link
+              className="button is-success is-small"
+              to={latestPost.fields.slug}
+            >
+              <strong>Continue Reading</strong>
             </Link>
           </p>
         </div>

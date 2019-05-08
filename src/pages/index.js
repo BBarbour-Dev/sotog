@@ -17,7 +17,7 @@ export default () => {
           </div>
           <div className="hero-body">
             <div className="container">
-              <div style={{ marginTop: "15vh" }} className="has-text-centered">
+              <div style={{ marginTop: "20vh" }} className="has-text-centered">
                 <BeginningButton />
               </div>
             </div>

@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Eagle+Lake");
-
+@font-face {
+  font-family: "Uni";
+  src: url("../styles/UnZialish.ttf");
+}
 .eagle {
-  font-family: "Eagle Lake", cursive;
-  text-transform: uppercase;
+  font-family: "Uni", cursive;
+  font-weight: bold;
 }
 
 .site {
@@ -27,7 +29,7 @@
     url("/static/Astrid for site-8623bc0c5d9027bb8125bbe86e078ff6.jpg")
       no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  max-height: 100vh;
 }
 
 .shade {
