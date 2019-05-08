@@ -30,12 +30,18 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: "false",
+        }
       - { label: "PDF", name: "pdf", widget: "file" }
       - {
           label: "Images",
           name: "images",
           widget: "list",
+          required: "false",
           field:
             {
               label: "Image",
