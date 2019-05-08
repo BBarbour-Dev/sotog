@@ -34,20 +34,15 @@ collections:
           label: "Description",
           name: "description",
           widget: "string",
-          required: "false",
+          required: false,
         }
-      - { label: "PDF", name: "pdf", widget: "file" }
+      - { label: "PDF", name: "pdf", widget: "file", required: false }
       - {
           label: "Images",
           name: "images",
           widget: "list",
-          required: "false",
+          required: false,
           field:
-            {
-              label: "Image",
-              name: "image",
-              widget: "image",
-              required: "false",
-            },
+            { label: "Image", name: "image", widget: "image", required: false },
         }
       - { label: "Type", name: "type", widget: "hidden", default: "chapters" }
