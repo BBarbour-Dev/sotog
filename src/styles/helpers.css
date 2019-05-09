@@ -63,6 +63,28 @@
   );
 }
 
+.content-header {
+  margin: -0.75rem;
+  padding: 0.75rem;
+  height: 9.5vh;
+  background: rgb(142, 140, 132);
+  background: linear-gradient(
+    18deg,
+    rgba(142, 140, 132, 1) 28%,
+    rgba(118, 120, 110, 1) 89%
+  );
+}
+
+.content-gap {
+  margin: 4rem 0;
+  background: "#F5F5F5";
+}
+
+@media only screen and (max-width: 768px) {
+  .content-gap {
+    margin: 0;
+  }
+}
 .no-radius {
   border-radius: 0px;
 }

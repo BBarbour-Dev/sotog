@@ -5,7 +5,7 @@ const PostBox = ({ post }) => {
   return (
     <div
       className="box"
-      style={{ marginBottom: "1rem", background: "hsl(0, 0%, 96%)" }}
+      style={{ marginBottom: "1rem", background: "#F5F5F5" }}
     >
       <div className="has-text-white-bis post-header">
         <h2 className="is-size-5 has-text-weight-bold">
