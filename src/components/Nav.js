@@ -8,7 +8,7 @@ const Nav = () => {
     <nav className="navbar is-link no-radius">
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item eagle" to="/">
+          <Link className="navbar-item eagle slight-shade" to="/">
             Saga of the Old Gods
           </Link>
           <div
