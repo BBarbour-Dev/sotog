@@ -76,7 +76,8 @@
 }
 
 .content-gap {
-  margin: 4rem 0;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
   background: "#F5F5F5";
 }
 
@@ -87,4 +88,8 @@
 }
 .no-radius {
   border-radius: 0px;
+}
+
+.disabled-link {
+  pointer-events: none;
 }
