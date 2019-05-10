@@ -29,11 +29,11 @@ const Nav = () => {
           </Link>
           <a
             className="navbar-item"
-            href="http://www.indyplanet.us/comics/171695"
+            href="https://indyplanet.com/kj-sylva"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get Prints
+            Paperbacks
           </a>
           <Link className="navbar-item" to="/about">
             About

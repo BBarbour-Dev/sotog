@@ -21,13 +21,19 @@ const Post = ({ data }) => {
           <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to Posts
         </Link>
         <div className="columns is-mobile">
-          <div className="column box content-gap">
+          <div
+            className="column box content-gap"
+            style={{ marginBottom: "1rem", background: "#F5F5F5" }}
+          >
             <div className="content-header has-text-white-bis is-hidden-mobile">
               <h1 className="is-size-3 has-text-weight-bold">
                 {frontmatter.title}
               </h1>
             </div>
-            <h1 className="is-size-3 has-text-weight-bold is-hidden-tablet">
+            <h1
+              className="is-size-3 has-text-weight-bold is-hidden-tablet"
+              style={{ marginTop: "1rem" }}
+            >
               {frontmatter.title}
             </h1>
             <h2
@@ -67,14 +73,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        thumbnail {
-          childImageSharp {
-            fluid(maxHeight: 1075, quality: 72) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-          publicURL
-        }
       }
       html
     }
