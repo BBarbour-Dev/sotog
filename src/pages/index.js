@@ -8,7 +8,7 @@ export default () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section class="hero is-fullheight hero-bg">
+      <section className="hero is-fullheight hero-bg">
         <div className="hero-header" style={{ marginTop: "15vh" }}>
           <div className="container has-text-centered">
             <h1 className="is-size-1 eagle has-text-grey-lighter shade">

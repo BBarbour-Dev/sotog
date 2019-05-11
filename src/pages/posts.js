@@ -9,19 +9,12 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="Posts" />
-      <section className="container">
-        <div className="columns is-centered">
-          <div className="column is-four-fifths" style={{ margin: "2rem" }}>
-            <h1
-              className="is-size-3 has-text-grey-dark is-uppercase has-text-weight-bold eagle"
-              style={{ marginBottom: "2rem" }}
-            >
-              Posts
-            </h1>
-            {posts.map(post => {
+      <section className="container" style={{ padding: "2rem" }}>
+        <div className="columns is-multiline">
+          {posts &&
+            posts.map(post => {
               return <PostBox post={post.node} key={post.node.id} />
             })}
-          </div>
         </div>
       </section>
     </Layout>
@@ -43,6 +36,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            featured {
+              childImageSharp {
+                fluid(maxWidth: 120, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt
         }
