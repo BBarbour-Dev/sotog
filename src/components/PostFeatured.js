@@ -3,7 +3,6 @@ import Img from "gatsby-image"
 
 const PostFeatured = ({ featured, alt }) => {
   const { childImageSharp, image } = featured
-
   if (!!image && !!image.childImageSharp) {
     return <Img fluid={image.childImageSharp.fluid} alt={alt} />
   }

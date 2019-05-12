@@ -21,7 +21,7 @@ const Post = ({ data }) => {
           <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to Posts
         </Link>
         <div className="columns is-mobile">
-          <div className="colum content-gap">
+          <div className="column content-gap">
             <div className="box" style={{ background: "#F5F5F5" }}>
               <div className="content-header has-text-white-bis is-hidden-mobile">
                 <h1 className="is-size-3 has-text-weight-bold">
@@ -41,7 +41,10 @@ const Post = ({ data }) => {
                 {frontmatter.date}
               </h2>
               {frontmatter.featured ? (
-                <PostFeatured featured={frontmatter.featured} />
+                <PostFeatured
+                  featured={frontmatter.featured}
+                  alt={frontmatter.title}
+                />
               ) : null}
               <div
                 className="content is-medium has-text-dark-grey has-text-justified"

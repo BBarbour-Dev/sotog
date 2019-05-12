@@ -1,41 +1,91 @@
-// import React from "react"
-// import { graphql } from "gatsby"
+import React, { useState } from "react"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import { Link, graphql } from "gatsby"
+import { FaLongArrowAltLeft } from "react-icons/fa"
+import { FaArrowRight } from "react-icons/fa"
+import { FaArrowLeft } from "react-icons/fa"
 
-// const Chapter = ({ data }) => {
-//   const { markdownRemark } = data
-//   const { frontmatter } = markdownRemark
-//   console.log(frontmatter.images)
-//   return (
-//     <div>
-//       <h1>{frontmatter.title}</h1>
-//       {frontmatter.images.map(image => {
-//         return <img src={image} alt={image} style={{ height: "400px" }} />
-//       })}
-//     </div>
-//   )
-// }
-
-// export const chapterQuery = graphql`
-//   query($slug: String!) {
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       id
-//       fileAbsolutePath
-//       frontmatter {
-//         title
-//         date(formatString: "MMMM DD, YYYY")
-//         images
-//       }
-//     }
-//   }
-// `
-// export default Chapter
-
-import React from "react"
-
-export default () => {
+const Chapter = ({ data }) => {
+  const { markdownRemark } = data
+  const { frontmatter } = markdownRemark
+  const chapterImages = [...frontmatter.images]
+  const [currentPage, setCurrentPage] = useState(0)
+  const nextPage = () => {
+    if (currentPage < chapterImages.length - 1) {
+      return setCurrentPage(currentPage + 1)
+    }
+    return null
+  }
+  const previousPage = () => {
+    if (currentPage > 0) {
+      return setCurrentPage(currentPage - 1)
+    }
+    return null
+  }
   return (
-    <div>
-      <h1>Test</h1>
-    </div>
+    <Layout>
+      <SEO title={`${frontmatter.title} • Chapters `} />
+      <div className="container">
+        <Link
+          to="/chapters"
+          className="button is-success is-small is-hidden-mobile"
+          style={{ marginTop: "1.25rem" }}
+        >
+          <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to
+          Chapters
+        </Link>
+        <div className="columns is-centered">
+          <div className="column content-gap">
+            <div className="has-text-centered">
+              <figure className="image">
+                <div className="next-page" onClick={nextPage}>
+                  <span className="has-text-white">
+                    <FaArrowRight />
+                  </span>
+                </div>
+                <div className="previous-page" onClick={previousPage}>
+                  <span className="has-text-white">
+                    <FaArrowLeft />
+                  </span>
+                </div>
+                <img
+                  src={chapterImages[currentPage]}
+                  alt={frontmatter.title}
+                  style={{ width: "100%" }}
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      fileAbsolutePath
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        pdf {
+          relativePath
+        }
+        images
+        cover {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export default Chapter

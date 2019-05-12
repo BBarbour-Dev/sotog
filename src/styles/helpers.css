@@ -99,3 +99,52 @@
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
 }
+
+.next-page {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  background: black;
+  height: 100%;
+  width: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.5s ease-out;
+  font-size: 120px;
+  cursor: pointer;
+}
+
+.next-page:hover {
+  opacity: 0.5;
+}
+
+.previous-page {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  background: black;
+  height: 100%;
+  width: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity 0.5s ease-out;
+  font-size: 120px;
+  cursor: pointer;
+}
+
+.previous-page:hover {
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+  .next-page {
+    width: 10vh;
+    font-size: 64px;
+  }
+  .previous-page {
+    width: 10vh;
+    font-size: 64px;
+  }
+}
