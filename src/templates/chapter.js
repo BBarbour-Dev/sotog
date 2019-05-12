@@ -5,12 +5,13 @@ import { Link, graphql } from "gatsby"
 import { FaLongArrowAltLeft } from "react-icons/fa"
 import { FaArrowRight } from "react-icons/fa"
 import { FaArrowLeft } from "react-icons/fa"
+import Img from "gatsby-image"
 
 const Chapter = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter } = markdownRemark
   const chapterImages = [...frontmatter.cover, ...frontmatter.images]
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(1)
   const nextPage = () => {
     if (currentPage < chapterImages.length - 1) {
       return setCurrentPage(currentPage + 1)
@@ -23,6 +24,7 @@ const Chapter = ({ data }) => {
     }
     return null
   }
+  console.log(chapterImages)
   return (
     <Layout>
       <SEO title={`${frontmatter.title} • Chapters `} />
@@ -38,23 +40,28 @@ const Chapter = ({ data }) => {
         <div className="columns is-centered">
           <div className="column content-gap">
             <div className="has-text-centered">
-              <figure className="image">
-                <div className="next-page" onClick={nextPage}>
-                  <span className="has-text-white">
-                    <FaArrowRight />
-                  </span>
-                </div>
-                <div className="previous-page" onClick={previousPage}>
-                  <span className="has-text-white">
-                    <FaArrowLeft />
-                  </span>
-                </div>
-                <img
+              {/* <figure className="image"> */}
+              {/* <img
                   src={chapterImages[currentPage].publicURL}
                   alt={frontmatter.title}
                   style={{ width: "100%" }}
-                />
-              </figure>
+                /> */}
+              {/* </figure> */}
+              <div className="next-page" onClick={nextPage}>
+                <span className="has-text-white">
+                  <FaArrowRight />
+                </span>
+              </div>
+              <div className="previous-page" onClick={previousPage}>
+                <span className="has-text-white">
+                  <FaArrowLeft />
+                </span>
+              </div>
+              <Img
+                fluid={chapterImages[currentPage].childImageSharp.fluid}
+                alt={`Page ${currentPage + 1}`}
+                style={{ width: "100%" }}
+              />
             </div>
           </div>
         </div>
@@ -69,10 +76,18 @@ export const pageQuery = graphql`
       frontmatter {
         title
         cover {
-          publicURL
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
         images {
-          publicURL
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
