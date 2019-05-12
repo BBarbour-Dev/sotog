@@ -46,7 +46,6 @@ export const query = graphql`
             pdf {
               relativePath
             }
-            images
             cover {
               childImageSharp {
                 fluid {

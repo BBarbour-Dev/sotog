@@ -9,7 +9,7 @@ import { FaArrowLeft } from "react-icons/fa"
 const Chapter = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter } = markdownRemark
-  const chapterImages = [...frontmatter.images]
+  const chapterImages = [...frontmatter.cover, ...frontmatter.images]
   const [currentPage, setCurrentPage] = useState(0)
   const nextPage = () => {
     if (currentPage < chapterImages.length - 1) {
@@ -50,7 +50,7 @@ const Chapter = ({ data }) => {
                   </span>
                 </div>
                 <img
-                  src={chapterImages[currentPage]}
+                  src={chapterImages[currentPage].publicURL}
                   alt={frontmatter.title}
                   style={{ width: "100%" }}
                 />
@@ -66,22 +66,13 @@ const Chapter = ({ data }) => {
 export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      fileAbsolutePath
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
-        pdf {
-          relativePath
-        }
-        images
         cover {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
+          publicURL
+        }
+        images {
+          publicURL
         }
       }
     }

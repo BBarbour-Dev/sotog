@@ -14,8 +14,20 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    `gatsby-transformer-remark`,
-    `gatsby-remark-relative-images`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {},
+          },
+        ],
+      },
+    },
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     {
