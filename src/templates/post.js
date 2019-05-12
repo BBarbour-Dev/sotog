@@ -28,6 +28,14 @@ const Post = ({ data }) => {
                   {frontmatter.title}
                 </h1>
               </div>
+              <Link
+                to="/posts"
+                className="button is-success is-small is-hidden-tablet"
+                style={{ marginTop: "1.25rem", marginBottom: "1.25rem" }}
+              >
+                <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to
+                Posts
+              </Link>
               <h1
                 className="is-size-3 has-text-weight-bold is-hidden-tablet"
                 style={{ marginTop: "1rem" }}
