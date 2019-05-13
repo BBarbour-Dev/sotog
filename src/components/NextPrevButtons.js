@@ -27,8 +27,8 @@ const NextPrevButtons = ({ id }) => {
     }
   `)
   const posts = data.allMarkdownRemark.edges
-  const currentPost = data.allMarkdownRemark.edges.findIndex(edge => {
-    return edge.node.id === id
+  const currentPost = posts.findIndex(post => {
+    return post.node.id === id
   })
   const nextPost = currentPost === 0 ? null : posts[currentPost - 1]
   const previousPost =

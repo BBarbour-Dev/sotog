@@ -121,38 +121,50 @@
   opacity: 0;
   position: absolute;
   right: 0;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
-  width: 25vh;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: opacity 0.5s ease-out;
-  font-size: 120px;
+  font-size: 5rem;
   cursor: pointer;
   z-index: 2;
 }
 
 .next-page:hover {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .previous-page {
   opacity: 0;
   position: absolute;
   left: 0;
-  background: black;
+  background: rgba(0, 0, 0, 0.5);
   height: 100%;
-  width: 25vh;
+  width: 15%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: opacity 0.5s ease-out;
-  font-size: 120px;
+  font-size: 5rem;
   cursor: pointer;
   z-index: 2;
 }
 
 .previous-page:hover {
-  opacity: 0.5;
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .hide-on-touch {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .hide-on-mouse {
+    display: none;
+  }
 }

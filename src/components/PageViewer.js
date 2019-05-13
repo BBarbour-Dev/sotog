@@ -19,7 +19,7 @@ const PageViewer = ({ chapterImages }) => {
   }
   return (
     <div className="has-text-centered" style={{ position: "relative" }}>
-      <div className="slider is-hidden-desktop">
+      <div className="slider hide-on-mouse">
         {chapterImages.map((image, index) => {
           return (
             <div className="slide" style={{ zIndex: "1" }}>
@@ -32,7 +32,7 @@ const PageViewer = ({ chapterImages }) => {
           )
         })}
       </div>
-      <div className="is-hidden-touch" style={{ position: "relative" }}>
+      <div className="hide-on-touch" style={{ position: "relative" }}>
         <div className="next-page" onClick={nextPage}>
           <span className="has-text-white">
             <FaArrowRight />

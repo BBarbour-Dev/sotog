@@ -4,6 +4,7 @@ import SEO from "../components/SEO"
 import { Link, graphql } from "gatsby"
 import { FaLongArrowAltLeft } from "react-icons/fa"
 import PageViewer from "../components/PageViewer"
+import NextChapterButton from "../components/NextChapterButton"
 
 const Chapter = ({ data }) => {
   const { markdownRemark } = data
@@ -23,15 +24,24 @@ const Chapter = ({ data }) => {
         </Link>
         <div className="columns is-centered">
           <div className="column has-text-centered">
-            <p>
-              <strong>Desktop:</strong> Click edge to change page.{" "}
-              <strong>Mobile/Touch:</strong> Swipe left or right to change page.
+            <p
+              className="hide-on-touch"
+              style={{ textDecoration: "underline" }}
+            >
+              Click edge of page to move forward/backward.
+            </p>
+            <p
+              className="hide-on-mouse"
+              style={{ textDecoration: "underline" }}
+            >
+              Swipe left or right to move forward/backward.
             </p>
           </div>
         </div>
         <div className="columns is-centered">
-          <div className="column content-gap">
+          <div className="column content-gap has-text-centered">
             <PageViewer chapterImages={chapterImages} />
+            <NextChapterButton chapterId={markdownRemark.id} />
           </div>
         </div>
       </div>
@@ -42,6 +52,7 @@ const Chapter = ({ data }) => {
 export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
       frontmatter {
         title
         cover {
