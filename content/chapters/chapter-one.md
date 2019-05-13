@@ -11,9 +11,27 @@ description: >-
   meaning, Brie decides she will find the answer on her own.
 pdf: /assets/saga-of-the-old-gods-issue-1.pdf
 images:
+  - /assets/b_insidefront.png
   - /assets/001.png
   - /assets/002.png
   - /assets/003.png
+  - /assets/004.png
+  - /assets/005.png
+  - /assets/006.png
+  - /assets/007.png
+  - /assets/008.png
+  - /assets/009.png
+  - /assets/010.png
+  - /assets/011.png
+  - /assets/012.png
+  - /assets/013.png
+  - /assets/014.png
+  - /assets/015.png
+  - /assets/016.png
+  - /assets/017.png
+  - /assets/019.png
+  - /assets/020.png
+  - null
 type: chapters
 ---
 
