@@ -1,6 +1,7 @@
 ---
-title: Sample Post
+title: 'Chapter Two: Coming Soon!'
 date: 2019-05-13T18:53:53.997Z
+featured: /assets/chaptertwopreview.jpg
 type: posts
 ---
-Site is finished. Add what you want!
+Check back for more information soon.
