@@ -34,14 +34,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "posts",
-        path: `${__dirname}/posts`,
+        path: `${__dirname}/content/posts`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "chapters",
-        path: `${__dirname}/chapters`,
+        path: `${__dirname}/content/chapters`,
       },
     },
   ],

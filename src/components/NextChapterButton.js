@@ -27,13 +27,16 @@ const NextChapterButton = ({ chapterId }) => {
     chapters.length - 1 < currentChapter ? null : chapters[currentChapter + 1]
   console.log(chapters.length - 1, currentChapter, chapterId)
   return nextChapter ? (
-    <Link
-      to={nextChapter.node.fields.slug}
-      className="button is-success is-small"
-      style={{ margin: "1rem" }}
-    >
-      Next Chapter
-    </Link>
+    <>
+      <hr />
+      <Link
+        to={nextChapter.node.fields.slug}
+        className="button is-success is-small"
+        style={{ margin: "1rem" }}
+      >
+        Next Chapter
+      </Link>
+    </>
   ) : null
 }
 

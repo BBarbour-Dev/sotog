@@ -6,9 +6,19 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "/content/about.md"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: markdown }
+          - { label: Author, name: author, widget: markdown }
   - name: posts
     label: Posts
-    folder: posts
+    folder: /content/posts
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -24,7 +34,7 @@ collections:
       - { label: "Type", name: "type", widget: "hidden", default: "posts" }
   - name: chapters
     label: Chapters
-    folder: chapters
+    folder: /content/chapters
     create: true
     slug: "{{slug}}"
     fields:
