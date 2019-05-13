@@ -31,7 +31,5 @@ images:
   - /assets/017.png
   - /assets/019.png
   - /assets/020.png
-  - null
 type: chapters
 ---
-

@@ -8,33 +8,31 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
+        name: `assets`,
         path: `${__dirname}/static/assets`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
+            resolve: `gatsby-plugin-netlify-cms-paths`,
+            options: {
+              cmsConfig: `/static/admin/config.yml`,
+            },
+          },
+          {
             resolve: `gatsby-remark-relative-images`,
+            option: {
+              name: `assets`,
+            },
           },
           {
             resolve: "gatsby-remark-images",
             options: {},
           },
         ],
-      },
-    },
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: "posts",
-        path: `${__dirname}/content/posts`,
       },
     },
     {
@@ -51,5 +49,17 @@ module.exports = {
         path: `${__dirname}/content/pages`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "posts",
+        path: `${__dirname}/content/posts`,
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
+    "gatsby-plugin-netlify",
   ],
 }

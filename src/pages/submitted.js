@@ -23,7 +23,7 @@ export default () => {
                   <div className="message">
                     <div className="message-body">
                       Thank you for contacting Saga of the Old Gods. The author
-                      follow up with you at your email address as soon as
+                      will follow up with you at your email address as soon as
                       possible.
                     </div>
                   </div>
