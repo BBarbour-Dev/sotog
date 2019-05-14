@@ -4,27 +4,27 @@ import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from "react-icons/fa"
 const Footer = () => {
   return (
     <div className="footer footer-bg">
-      <div className="has-text-centered">
+      <div className="has-text-centered" style={{ fontSize: "2rem" }}>
         <a
           href="https://www.facebook.com/kjsylva/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaFacebookSquare size="2rem" />
+          <FaFacebookSquare />
         </a>
         <a
           href="https://www.instagram.com/kjsylvaart/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaInstagram size="2rem" />
+          <FaInstagram />
         </a>
         <a
           href="https://twitter.com/KjSylva"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaTwitterSquare size="2rem" />
+          <FaTwitterSquare />
         </a>
         <p className="is-size-7 has-text-grey">
           © {new Date().getFullYear()}, KJ Sylva
