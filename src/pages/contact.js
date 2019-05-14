@@ -1,4 +1,4 @@
-import React from "react"
+import Reactfrom "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
@@ -29,13 +29,23 @@ export default () => {
                     <div className="field">
                       <div className="control">
                         <label htmlFor="name">Name</label>
-                        <input type="text" className="input" name="name" />
+                        <input
+                          type="text"
+                          className="input"
+                          name="name"
+                          required
+                        />
                       </div>
                     </div>
                     <div className="field">
                       <div className="control">
                         <label htmlFor="email">Email</label>
-                        <input type="email" className="input" name="email" />
+                        <input
+                          type="email"
+                          className="input"
+                          name="email"
+                          required
+                        />
                       </div>
                     </div>
                     <div className="field">
@@ -45,10 +55,13 @@ export default () => {
                           type="text"
                           className="textarea"
                           name="message"
+                          required
                         />
                       </div>
                     </div>
-                    <button className="button is-success is-fullwidth">
+                    <button
+                      className="button is-success is-fullwidth"
+                    >
                       Submit
                     </button>
                   </form>
