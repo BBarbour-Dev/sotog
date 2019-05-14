@@ -13,9 +13,13 @@ collections:
         name: "about"
         file: "/content/pages/about.md"
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Intro, name: intro, widget: markdown }
-          - { label: Author, name: author, widget: markdown }
+          - {
+              label: "Title",
+              name: "title",
+              widget: "string",
+              default: "About",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
   - name: posts
     label: Posts
     folder: /content/posts

@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 
 export default ({ data }) => {
   const { markdownRemark } = data
-  const { frontmatter } = markdownRemark
+  const { frontmatter, html } = markdownRemark
   console.log(frontmatter)
   return (
     <Layout>
@@ -20,27 +20,16 @@ export default ({ data }) => {
                 </h1>
               </div>
               <h1
-                className="is-size-3 has-text-weight-bold is-hidden-tablet"
+                className="is-size-2 has-text-weight-bold is-hidden-tablet"
                 style={{ marginTop: "1rem" }}
               >
                 {frontmatter.title}
               </h1>
-              <h2
-                className="is-size-4 has-text-weight-bold"
-                style={{ marginTop: "2rem" }}
-              >
-                Intro
-              </h2>
-              <div className="content is-medium has-text-dark-grey has-text-justified">
-                <div dangerouslySetInnerHTML={{ __html: frontmatter.intro }} />
-              </div>
-              <hr style={{ backgroundColor: "#e0ddd9" }} />
-              <h2 className="is-size-4 has-text-weight-bold">Author</h2>
               <div
                 className="content is-medium has-text-dark-grey has-text-justified"
-                style={{ marginTop: "1rem" }}
+                style={{ marginTop: "3rem" }}
               >
-                <div dangerouslySetInnerHTML={{ __html: frontmatter.author }} />
+                <div dangerouslySetInnerHTML={{ __html: html }} />
               </div>
             </div>
           </div>
@@ -56,10 +45,7 @@ export const query = graphql`
       frontmatter {
         title
       }
-      frontmatter {
-        author
-        intro
-      }
+      html
     }
   }
 `
