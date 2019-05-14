@@ -1,8 +1,7 @@
 ---
 title: About
 ---
-
-## Intro
+### Intro
 
 After experiencing dreams about war and destruction, Brie seeks out the truth behind them only to find out that there are far more details about her
 existence and who she truly is than she could have ever imagined.
@@ -11,7 +10,7 @@ Inspired by the rich history and stories of mythological gods and heroes in anci
 character Brie as she figures out who she is and why she's connected to a painful prophecy about war and destruction. Brie is introduced to many
 different gods and heroes, whilst also learning about herself, and her powers and historical influences.
 
-## Author
+### Author
 
 My name is **KJ Sylva**, I am an illustrator and amateur comic book writer and
 artist.
