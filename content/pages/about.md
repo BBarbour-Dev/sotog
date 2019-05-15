@@ -6,9 +6,9 @@ title: About
 After experiencing dreams about war and destruction, Brie seeks out the truth behind them only to find out that there are far more details about her
 existence and who she truly is than she could have ever imagined.
 
-Inspired by the rich history and stories of mythological gods and heroes in ancient Norse, Greek, Egyptian, etc cultures, the story follows the main
+Inspired by the rich history and stories of mythological gods and heroes in ancient Norse, Greek, Egyptian, etc, cultures, the story follows the main
 character Brie as she figures out who she is and why she's connected to a painful prophecy about war and destruction. Brie is introduced to many
-different gods and heroes, whilst also learning about herself, and her powers and historical influences.
+different gods and heroes, whilst also learning about herself, her powers, and her historical influences.
 
 ### Author
 
