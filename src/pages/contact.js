@@ -1,4 +1,4 @@
-import Reactfrom "react"
+import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
@@ -59,11 +59,10 @@ export default () => {
                         />
                       </div>
                     </div>
-                    <button
+                    <input
+                      type="submit"
                       className="button is-success is-fullwidth"
-                    >
-                      Submit
-                    </button>
+                    />
                   </form>
                 </div>
               </div>
