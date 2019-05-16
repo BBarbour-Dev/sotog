@@ -30,6 +30,7 @@ images:
   - /assets/2018.jpg
   - /assets/2019.jpg
   - /assets/2020.jpg
+  - /assets/y_inside-back.jpg
 type: chapters
 ---
 
