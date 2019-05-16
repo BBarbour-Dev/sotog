@@ -22,13 +22,15 @@ const ChapterCard = ({ chapter }) => {
           <Link to={chapter.fields.slug} className="card-footer-item">
             View
           </Link>
-          <a
-            href={chapter.frontmatter.pdf.relativePath}
-            className="card-footer-item"
-            download
-          >
-            Download PDF
-          </a>
+          {chapter.frontmatter.pdf && (
+            <a
+              href={chapter.frontmatter.pdf.relativePath}
+              className="card-footer-item"
+              download
+            >
+              Download PDF
+            </a>
+          )}
         </footer>
       </div>
     </div>

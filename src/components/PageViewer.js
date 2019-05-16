@@ -17,7 +17,7 @@ const PageViewer = ({ chapterImages }) => {
     }
     return null
   }
-  return (
+  return chapterImages ? (
     <div className="has-text-centered" style={{ position: "relative" }}>
       <div className="slider hide-on-mouse">
         {chapterImages.map((image, index) => {
@@ -50,7 +50,7 @@ const PageViewer = ({ chapterImages }) => {
         />
       </div>
     </div>
-  )
+  ) : null
 }
 
 export default PageViewer
