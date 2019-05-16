@@ -23,7 +23,7 @@ const Chapter = ({ data }) => {
           Chapters
         </Link>
         <div className="columns is-centered">
-          <div className="column has-text-centered">
+          <div className="column is-four-fifths has-text-centered">
             <p
               className="hide-on-touch"
               style={{ textDecoration: "underline" }}
@@ -39,7 +39,7 @@ const Chapter = ({ data }) => {
           </div>
         </div>
         <div className="columns is-centered">
-          <div className="column content-gap has-text-centered">
+          <div className="column is-four-fifths content-gap has-text-centered">
             <PageViewer chapterImages={chapterImages} />
             <NextChapterButton chapterId={markdownRemark.id} />
           </div>
