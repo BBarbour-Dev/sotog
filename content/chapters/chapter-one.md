@@ -9,6 +9,8 @@ description: >-
   only a consequence of her excessive alcoholism and that the only answer is to
   stop drinking. Not satisfied with what she was told, and obsessing over the
   meaning, Brie decides she will find the answer on her own.
+pdf: >-
+  https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3Aab177feb-c271-4e96-acaa-21b093aacc82&fbclid=IwAR3HQqumKifdeKHFFJSppuRa5yHBW2ZsddkHBlni3XTRWx2YnrSivpNaK1A
 images:
   - /assets/b_insidefront.jpg
   - /assets/001.jpg
@@ -33,3 +35,4 @@ images:
   - /assets/020.jpg
 type: chapters
 ---
+
