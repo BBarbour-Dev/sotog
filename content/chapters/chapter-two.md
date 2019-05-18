@@ -9,6 +9,8 @@ description: >-
   decides to eat the chocolate, she passes out and wakes up to find herself in
   the care of her new neighbor who tells her the chocolate was poisoned and now
   her life is in danger.
+pdf: >-
+  https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A5e8bbce4-47eb-4032-9971-7bbd8a245d69&fbclid=IwAR0F9B4THM6OlVN-ty2hcVwkcBltv_bDJTyl3jqhb20gQYfBOhsdWXTMbFw
 images:
   - /assets/2001.jpg
   - /assets/2002.jpg
@@ -33,3 +35,4 @@ images:
   - /assets/y_inside-back.jpg
 type: chapters
 ---
+
