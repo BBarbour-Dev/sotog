@@ -1,5 +1,5 @@
 ---
-title: Chapter 2 - Poisoned Wings
+title: Chapter Two - Poisoned Wings
 date: 2019-05-16T02:33:32.108Z
 cover: /assets/chapter2cover.jpg
 description: >-
@@ -8,7 +8,7 @@ description: >-
   answer is a piece of chocolate and a stress-free day. After Brie reluctantly
   decides to eat the chocolate, she passes out and wakes up to find herself in
   the care of her new neighbor who tells her the chocolate was poisoned and now
-  her life is in danger. 
+  her life is in danger.
 images:
   - /assets/2001.jpg
   - /assets/2002.jpg
@@ -33,4 +33,3 @@ images:
   - /assets/y_inside-back.jpg
 type: chapters
 ---
-

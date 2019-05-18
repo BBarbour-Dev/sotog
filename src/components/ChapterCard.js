@@ -24,7 +24,7 @@ const ChapterCard = ({ chapter }) => {
           </Link>
           {chapter.frontmatter.pdf && (
             <a
-              href={chapter.frontmatter.pdf.relativePath}
+              href={chapter.frontmatter.pdf}
               className="card-footer-item"
               download
             >

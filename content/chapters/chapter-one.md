@@ -9,7 +9,6 @@ description: >-
   only a consequence of her excessive alcoholism and that the only answer is to
   stop drinking. Not satisfied with what she was told, and obsessing over the
   meaning, Brie decides she will find the answer on her own.
-pdf: /assets/saga-of-the-old-gods-issue-1.pdf
 images:
   - /assets/b_insidefront.jpg
   - /assets/001.jpg
@@ -34,4 +33,3 @@ images:
   - /assets/020.jpg
 type: chapters
 ---
-

@@ -43,9 +43,7 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             description
-            pdf {
-              relativePath
-            }
+            pdf
             cover {
               childImageSharp {
                 fluid {
