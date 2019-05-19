@@ -43,6 +43,7 @@ export const query = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             description
+            pdf
             cover {
               childImageSharp {
                 fluid {

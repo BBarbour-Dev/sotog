@@ -26,7 +26,8 @@ const ChapterCard = ({ chapter }) => {
             <a
               href={chapter.frontmatter.pdf}
               className="card-footer-item"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Download PDF
             </a>
