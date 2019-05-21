@@ -40,7 +40,7 @@ const NextPrevButtons = ({ id }) => {
       <div className="column is-two-fifths" style={{ marginBottom: "2rem" }}>
         <Link
           disabled={!previousPost}
-          className={`button is-success is-small has-text-left ${disabledPrevious}`}
+          className={`button is-success is-outlined is-small has-text-left ${disabledPrevious}`}
           to={previousPost ? previousPost.node.fields.slug : "/"}
         >
           <FaArrowAltCircleLeft />{" "}
@@ -50,7 +50,7 @@ const NextPrevButtons = ({ id }) => {
       <div className="column is-two-fifths has-text-right">
         <Link
           disabled={!nextPost}
-          className={`button is-success is-small has-text-left ${disabledNext}`}
+          className={`button is-success is-outlined is-small has-text-left ${disabledNext}`}
           to={nextPost ? nextPost.node.fields.slug : "/"}
         >
           <span style={{ marginRight: ".5rem" }}>Next Post</span>

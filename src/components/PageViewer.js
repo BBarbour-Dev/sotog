@@ -33,16 +33,16 @@ const PageViewer = ({ chapterImages }) => {
         })}
       </div>
       <div className="hide-on-touch" style={{ position: "relative" }}>
-        <div className="next-page" onClick={nextPage}>
+        <button className="next-page" onClick={nextPage}>
           <span className="has-text-white">
             <FaArrowRight />
           </span>
-        </div>
-        <div className="previous-page" onClick={previousPage}>
+        </button>
+        <button className="previous-page" onClick={previousPage}>
           <span className="has-text-white">
             <FaArrowLeft />
           </span>
-        </div>
+        </button>
         <Img
           fluid={chapterImages[currentPage].childImageSharp.fluid}
           alt={`Page ${currentPage + 1}`}

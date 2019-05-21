@@ -38,7 +38,10 @@ const PostBox = ({ post }) => {
         </div>
         <div style={{ marginTop: "1rem" }}>
           <p className="has-text-right">
-            <Link to={post.fields.slug} className="button is-success">
+            <Link
+              to={post.fields.slug}
+              className="button is-success is-outlined"
+            >
               Read More <FaLongArrowAltRight style={{ marginLeft: ".5rem" }} />
             </Link>
           </p>

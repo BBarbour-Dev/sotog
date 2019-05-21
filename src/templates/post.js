@@ -15,7 +15,7 @@ const Post = ({ data }) => {
       <div className="container">
         <Link
           to="/posts"
-          className="button is-success is-small is-hidden-mobile"
+          className="button is-success is-small is-hidden-mobile is-outlined"
           style={{ marginTop: "1.25rem" }}
         >
           <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to Posts

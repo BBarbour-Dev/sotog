@@ -16,30 +16,26 @@ const Chapter = ({ data }) => {
       <div className="container">
         <Link
           to="/chapters"
-          className="button is-success is-small"
+          className="button is-success is-small is-outlined"
           style={{ marginTop: "1.25rem", marginBottom: "1.25rem" }}
         >
           <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to
-          Chapters
+          Chapter List
         </Link>
+        <p
+          className="hide-on-touch has-text-centered"
+          style={{ textDecoration: "underline", marginBottom: "1rem" }}
+        >
+          Click edge of page to move forward/backward.
+        </p>
+        <p
+          className="hide-on-mouse has-text-centered"
+          style={{ textDecoration: "underline", marginBottom: "1rem" }}
+        >
+          Swipe left or right to move forward/backward.
+        </p>
         <div className="columns is-centered">
           <div className="column is-four-fifths has-text-centered">
-            <p
-              className="hide-on-touch"
-              style={{ textDecoration: "underline" }}
-            >
-              Click edge of page to move forward/backward.
-            </p>
-            <p
-              className="hide-on-mouse"
-              style={{ textDecoration: "underline" }}
-            >
-              Swipe left or right to move forward/backward.
-            </p>
-          </div>
-        </div>
-        <div className="columns is-centered">
-          <div className="column is-four-fifths content-gap has-text-centered">
             <PageViewer chapterImages={chapterImages} />
             <NextChapterButton chapterId={markdownRemark.id} />
           </div>

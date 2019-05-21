@@ -55,7 +55,7 @@ const LatestPostLanding = () => {
             </p>
             <p className="has-text-right" style={{ marginTop: "1rem" }}>
               <Link
-                className="button is-success is-small"
+                className="button is-success is-outlined is-small"
                 to={latestPost.fields.slug}
               >
                 Read More{" "}

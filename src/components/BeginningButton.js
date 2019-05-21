@@ -25,7 +25,10 @@ const BeginningButton = () => {
   `)
   const chapterOneURL = data.allMarkdownRemark.edges[0].node.fields.slug
   return (
-    <Link className="button is-success" to={chapterOneURL}>
+    <Link
+      className="button is-success action-btn is-rounded"
+      to={chapterOneURL}
+    >
       <strong>Start at the Beginning</strong>
     </Link>
   )

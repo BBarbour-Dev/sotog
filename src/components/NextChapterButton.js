@@ -31,7 +31,7 @@ const NextChapterButton = ({ chapterId }) => {
       <hr />
       <Link
         to={nextChapter.node.fields.slug}
-        className="button is-success is-small"
+        className="button is-success is-small is-outlined"
         style={{ margin: "1rem" }}
       >
         Next Chapter
