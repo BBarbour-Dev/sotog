@@ -17,7 +17,7 @@ const Chapter = ({ data }) => {
         <Link
           to="/chapters"
           className="button is-success is-small is-outlined"
-          style={{ marginTop: "1.25rem", marginBottom: "1.25rem" }}
+          style={{ marginTop: "2rem", marginBottom: "2rem" }}
         >
           <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to
           Chapter List

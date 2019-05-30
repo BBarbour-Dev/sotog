@@ -18,7 +18,10 @@ const PageViewer = ({ chapterImages }) => {
     return null
   }
   return chapterImages ? (
-    <div className="has-text-centered" style={{ position: "relative" }}>
+    <div
+      className="has-text-centered"
+      style={{ position: "relative", marginBottom: "2rem" }}
+    >
       <div className="slider hide-on-mouse">
         {chapterImages.map((image, index) => {
           return (

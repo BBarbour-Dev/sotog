@@ -16,15 +16,18 @@ const Post = ({ data }) => {
         <Link
           to="/posts"
           className="button is-success is-small is-hidden-mobile is-outlined"
-          style={{ marginTop: "1.25rem" }}
+          style={{ marginTop: "2rem" }}
         >
           <FaLongArrowAltLeft style={{ marginRight: ".5rem" }} /> Back to Posts
         </Link>
         <div className="columns is-mobile">
           <div className="column content-gap">
-            <div className="box" style={{ background: "#F5F5F5" }}>
+            <div
+              className="box"
+              style={{ background: "#F5F5F5", borderRadius: "0" }}
+            >
               <div className="content-header has-text-white-bis is-hidden-mobile">
-                <h1 className="is-size-3 has-text-weight-bold">
+                <h1 className="is-size-3 has-text-weight-bold is-uppercase">
                   {frontmatter.title}
                 </h1>
               </div>

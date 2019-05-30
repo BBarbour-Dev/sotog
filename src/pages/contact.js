@@ -9,9 +9,14 @@ export default () => {
       <div className="container">
         <div className="columns is-mobile">
           <div className="column content-gap">
-            <div className="box" style={{ background: "#F5F5F5" }}>
+            <div
+              className="box"
+              style={{ background: "#F5F5F5", borderRadius: "0" }}
+            >
               <div className="content-header has-text-white-bis is-hidden-mobile">
-                <h1 className="is-size-3 has-text-weight-bold">Contact</h1>
+                <h1 className="is-size-3 has-text-weight-bold is-uppercase">
+                  Contact
+                </h1>
               </div>
               <div className="columns is-centered">
                 <div
@@ -24,11 +29,14 @@ export default () => {
                     data-netlify="true"
                     data-netlify-honeypot="bot-field"
                     action="/submitted/"
+                    style={{ marginBottom: "4rem" }}
                   >
                     <input type="hidden" name="form-name" value="contact" />
                     <div className="field">
                       <div className="control">
-                        <label htmlFor="name">Name</label>
+                        <label htmlFor="name" className="is-uppercase">
+                          Name
+                        </label>
                         <input
                           type="text"
                           className="input"
@@ -39,7 +47,9 @@ export default () => {
                     </div>
                     <div className="field">
                       <div className="control">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="email" className="is-uppercase">
+                          Email
+                        </label>
                         <input
                           type="email"
                           className="input"
@@ -50,7 +60,9 @@ export default () => {
                     </div>
                     <div className="field">
                       <div className="control">
-                        <label htmlFor="name">Message</label>
+                        <label htmlFor="name" className="is-uppercase">
+                          Message
+                        </label>
                         <textarea
                           type="text"
                           className="textarea"
@@ -61,7 +73,7 @@ export default () => {
                     </div>
                     <input
                       type="submit"
-                      className="button is-success is-fullwidth"
+                      className="button is-success is-fullwidth is-outlined"
                     />
                   </form>
                 </div>

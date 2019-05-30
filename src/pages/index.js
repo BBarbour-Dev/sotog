@@ -8,8 +8,8 @@ export default () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className="hero is-fullheight hero-bg">
-        <div className="hero-header" style={{ marginTop: "15vh" }}>
+      <section className="hero is-fullheight-with-navbar hero-bg">
+        <div className="hero-header" style={{ marginTop: "10vh" }}>
           <div className="container has-text-centered">
             <h1 className="is-size-1 eagle has-text-grey-lighter shade">
               Saga of the Old Gods
@@ -17,7 +17,7 @@ export default () => {
           </div>
           <div className="hero-body">
             <div className="container">
-              <div style={{ marginTop: "20vh" }} className="has-text-centered">
+              <div style={{ marginTop: "10vh" }} className="has-text-centered">
                 <BeginningButton />
               </div>
             </div>

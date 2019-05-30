@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const ChapterCard = ({ chapter }) => {
   return (
     <div className="column is-one-third">
-      <div className="card">
+      <div className="card" style={{ background: "#F5F5F5" }}>
         <div className="card-image">
           <PostFeatured
             featured={chapter.frontmatter.cover}
@@ -13,7 +13,7 @@ const ChapterCard = ({ chapter }) => {
           />
         </div>
         <div className="card-content">
-          <h1 className="is-size-5 has-text-weight-bold">
+          <h1 className="is-size-5 has-text-weight-bold has-text-success is-uppercase">
             {chapter.frontmatter.title}
           </h1>
           <p>{chapter.frontmatter.description}</p>

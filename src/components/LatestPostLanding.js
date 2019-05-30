@@ -41,7 +41,7 @@ const LatestPostLanding = () => {
             </h2>
             <p style={{ marginTop: "1rem" }}>
               <strong className="has-text-success">
-                <span className="is-size-5">
+                <span className="is-size-5 is-uppercase">
                   {latestPost.frontmatter.title}
                 </span>
               </strong>

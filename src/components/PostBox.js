@@ -6,9 +6,9 @@ import { FaLongArrowAltRight } from "react-icons/fa"
 const PostBox = ({ post }) => {
   return (
     <div className="column is-half">
-      <div className="box" style={{ background: "#F5F5F5" }}>
+      <div className="box" style={{ background: "#F5F5F5", borderRadius: "0" }}>
         <div className="has-text-white-bis post-header">
-          <h2 className="is-size-5 has-text-weight-bold">
+          <h2 className="is-size-5 has-text-weight-bold is-uppercase">
             {post.frontmatter.title}
           </h2>
         </div>
