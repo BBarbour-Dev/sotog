@@ -1,7 +1,7 @@
 ---
 title: Chapter Two - Poisoned Wings
 date: 2019-05-16T02:33:32.108Z
-cover: /assets/chapter2cover.jpg
+cover: /assets/newfixed-cover.jpg
 description: >-
   Brie experiences another vivid dream and immediately sets out for answers from
   her psychologist Dr. Astrid once again. However, this time Dr. Astrid's only
