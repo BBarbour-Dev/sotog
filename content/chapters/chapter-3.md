@@ -1,5 +1,5 @@
 ---
-title: Chapter 3
+title: Chapter 3 - The Prophecy
 date: 2019-08-25T17:17:01.161Z
 cover: /assets/3000cover.jpg
 description: >-
