@@ -1,5 +1,5 @@
 ---
-title: Chapter One
+title: Chapter One - Brie's Dream
 date: 2019-05-11T20:18:12.374Z
 cover: /assets/a_frontcover.jpg
 description: >-
