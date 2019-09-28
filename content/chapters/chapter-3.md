@@ -32,6 +32,8 @@ images:
   - /assets/3021.jpg
   - /assets/3022.jpg
   - /assets/3023.jpg
+  - /assets/page-24.jpg
+  - /assets/y_insideback.jpg
 type: chapters
 ---
 
