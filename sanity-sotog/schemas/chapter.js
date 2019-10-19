@@ -29,7 +29,7 @@ export default {
       type: 'datetime'
     },
     {
-      name: 'cover_image',
+      name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
       options: {
@@ -47,5 +47,11 @@ export default {
       type: 'array',
       of: [{ type: 'image' }]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'coverImage'
+    }
+  }
 };

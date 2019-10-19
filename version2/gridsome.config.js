@@ -4,6 +4,8 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+console.log(process.env.SANITY_PROJECT_ID);
+
 module.exports = {
   siteName: 'Saga of the Old Gods',
   plugins: [
