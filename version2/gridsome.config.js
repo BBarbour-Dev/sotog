@@ -6,5 +6,16 @@
 
 module.exports = {
   siteName: 'Saga of the Old Gods',
-  plugins: []
+  plugins: [
+    {
+      use: 'gridsome-source-sanity',
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATA_SET,
+        token: process.env.SANITY_TOKEN,
+        overlayDrafts: false,
+        watchMode: false
+      }
+    }
+  ]
 };
