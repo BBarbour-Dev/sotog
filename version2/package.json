@@ -1,0 +1,19 @@
+{
+  "name": "sotog",
+  "version": "1.0.0",
+  "description": "My flawless Nuxt.js project",
+  "author": "Brian Barbour",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@sanity/client": "^0.142.6",
+    "dotenv": "^8.2.0",
+    "nuxt": "^2.10.1"
+  },
+  "devDependencies": {}
+}
