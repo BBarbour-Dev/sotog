@@ -1,7 +1,11 @@
 import client from '../sanity/sanityClient';
 
 export const state = () => ({
-  postList: []
+  postList: [],
+  sanityConfig: {
+    projectId: process.env.sanityProjectId,
+    dataset: process.env.sanityDataset
+  }
 });
 
 export const mutations = {

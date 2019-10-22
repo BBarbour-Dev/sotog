@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
+import client from '@sanity/client';
+console.log(client);
 dotenv.config();
-
-console.log(process.env.SANITY_PROJECT_ID, process.env.SANITY_DATASET);
 
 export default {
   mode: 'universal',
@@ -22,5 +22,26 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  loading: { color: '#fff' }
+  loading: { color: '#fff' },
+  generate: {
+    routes: () => {
+      const routes = [];
+      const creatPostRoutes = async () => {
+        const query = `*[_type == 'post'] {_id, publishedAt, slug{current}, title, body, author->{name}, body} | order(_publishedAt desc)`;
+        try {
+          const data = await client.fetch(query);
+          const postRoutes = data.map(post => {
+            return {
+              route: `/post/${post.slug.current}`,
+              payload: post
+            };
+          });
+          routes = [...routes, postRoutes];
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      return routes;
+    }
+  }
 };
