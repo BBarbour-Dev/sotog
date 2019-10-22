@@ -1,7 +1,13 @@
 import dotenv from 'dotenv';
-import client from '@sanity/client';
-console.log(client);
 dotenv.config();
+
+import sanityClient from '@sanity/client';
+const client = sanityClient({
+  projectId: process.env.SANITY_PROJECT_ID,
+  dataset: process.env.SANITY_DATASET,
+  token: '',
+  useCdn: false
+});
 
 export default {
   mode: 'universal',
@@ -24,24 +30,21 @@ export default {
   },
   loading: { color: '#fff' },
   generate: {
-    routes: () => {
-      const routes = [];
-      const creatPostRoutes = async () => {
-        const query = `*[_type == 'post'] {_id, publishedAt, slug{current}, title, body, author->{name}, body} | order(_publishedAt desc)`;
-        try {
-          const data = await client.fetch(query);
-          const postRoutes = data.map(post => {
-            return {
-              route: `/post/${post.slug.current}`,
-              payload: post
-            };
-          });
-          routes = [...routes, postRoutes];
-        } catch (err) {
-          console.log(err);
-        }
-      };
-      return routes;
+    routes: async () => {
+      const postRoutes = await fetchPosts();
+      return [...postRoutes];
     }
   }
 };
+
+async function fetchPosts() {
+  const query = `*[_type == 'post'] {_id, publishedAt, slug{current}, title, body, author->{name}, body} | order(_publishedAt desc)`;
+  const data = await client.fetch(query);
+  const routes = data.map(post => {
+    return {
+      route: `/post/${post.slug.current}`,
+      payload: post
+    };
+  });
+  return routes;
+}

@@ -2,8 +2,11 @@
   <div class="container">
     <h1>Home</h1>
     <ul>
-      <li v-for="post in postList">
-        <span>{{post.title}}</span>
+      <li v-for="post in allPosts" :key="post._id">
+        <span>
+          {{post.title}} |
+          <nuxt-link :to="`/post/${post.slug.current}`">Read More</nuxt-link>
+        </span>
       </li>
     </ul>
   </div>
@@ -13,7 +16,7 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["postList"])
+    ...mapState(["allPosts"])
   }
 };
 </script>
@@ -23,30 +26,7 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

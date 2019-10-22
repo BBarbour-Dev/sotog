@@ -2,8 +2,8 @@
   <div>
     <block-content
       :blocks="post.body"
-      :dataset="sanityConfig.projectId"
-      :projectId="sanityConfig.dataset"
+      :projectId="sanityConfig.projectId"
+      :dataset="sanityConfig.dataset"
     />
   </div>
 </template>
@@ -17,18 +17,18 @@ export default {
   },
   async asyncData({ params, payload, store }) {
     if (payload) {
-      this.currentPost = payload;
+      return {
+        post: payload,
+        sanityConfig: store.state.sanityConfig
+      };
     } else {
       return {
-        post: store.state.postList.find(
+        post: store.state.allPosts.find(
           post => post.slug.current === params.slug
         ),
         sanityConfig: store.state.sanityConfig
       };
     }
-  },
-  mounted() {
-    console.log(this.sanityConfig);
   }
 };
 </script>
