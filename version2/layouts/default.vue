@@ -22,10 +22,10 @@ export default {
 :root {
   --primary-font-face: "Open Sans", sans-serif;
   --secondary-font-face: "Montserrat", sans-serif;
-  --primary-font-color: rgb(255, 251, 188);
-  --secondary-font-color: rgb(243, 236, 126);
+  --primary-font-color: rgb(232, 242, 237);
+  --secondary-font-color: rgb(255, 230, 181);
   --primary-background: rgb(26, 39, 52);
-  --off-white: rgb(230, 230, 190);
+  --shade: rgb(72, 72, 73);
 }
 
 *,

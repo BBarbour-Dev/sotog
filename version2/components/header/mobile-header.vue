@@ -46,6 +46,7 @@ h2 {
 h3 {
   padding: 2rem;
   font-style: italic;
+  color: var(--secondary-font-color);
 }
 
 .start-here {
@@ -61,5 +62,10 @@ h3 {
 .start-here a {
   font-family: var(--secondary-font-face);
   text-decoration: none;
+  color: var(--primary-font-color);
+}
+
+.start-here a:hover {
+  color: var(--secondary-font-color);
 }
 </style>
