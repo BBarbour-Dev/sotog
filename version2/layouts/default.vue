@@ -1,17 +1,20 @@
 <template>
   <div class="wrapper">
+    <mobile-nav></mobile-nav>
     <mobile-header></mobile-header>
     <nuxt />
   </div>
 </template>
 
 <script>
+import mobileNav from "../components/mobile-nav.vue";
 import mobileHeader from "../components/header/mobile-header";
 
 export default {
   name: "default-layout",
   components: {
-    mobileHeader
+    mobileHeader,
+    mobileNav
   }
 };
 </script>
