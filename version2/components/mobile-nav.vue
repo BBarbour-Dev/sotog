@@ -1,7 +1,15 @@
 <template>
   <div class="menu">
-    <button class="menu-toggle" @click="toggleNav" v-if="open">&times;</button>
-    <button class="menu-toggle" @click="toggleNav" v-else>&#9776;</button>
+    <div class="menu-toggle" :class="{'menu-dark': open}" @click="toggleNav" v-if="open">
+      <button>
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="menu-toggle" @click="toggleNav" v-else>
+      <button>
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
     <div class="overlay" :class="{'overlay-open': open}">
       <nav>
         <ul>
@@ -48,20 +56,37 @@ export default {
 <style scoped>
 .menu-toggle {
   position: fixed;
-  right: 0;
+  right: -100px;
+  top: -100px;
   z-index: 200;
   background-color: var(--secondary-font-color);
-  border-radius: 50% 50% 50% 50%;
-  height: 4rem;
-  width: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.menu-dark {
+  background: var(--primary-background);
+}
+
+.menu-toggle button {
+  background-color: inherit;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  color: var(--primary-background);
   border: none;
-  margin: 4px;
+  padding: none;
+  margin: none;
+  position: absolute;
+  top: 114px;
+  left: 42px;
+  display: inline-block;
+}
+
+.menu-dark button {
+  color: var(--secondary-font-color);
+  background-color: inherit;
 }
 
 .overlay {
@@ -90,7 +115,7 @@ export default {
   height: 70%;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
 }
@@ -111,13 +136,12 @@ export default {
 }
 
 .overlay ul li a {
-  font-family: var(--secondary-font-face);
   text-decoration: none;
-  color: var(--primary-font-color);
+  color: var(--secondary-font-color);
   text-transform: uppercase;
 }
 
 .overlay ul li a:hover {
-  color: var(--secondary-font-color);
+  color: var(--primary-font-color);
 }
 </style>
