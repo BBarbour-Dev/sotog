@@ -13,22 +13,22 @@
     <div class="overlay" :class="{'overlay-open': open}">
       <nav>
         <ul>
-          <li class="swing-in-right-bck">
+          <li>
             <nuxt-link to="/">Home</nuxt-link>
           </li>
-          <li class="swing-in-right-bck">
+          <li>
             <nuxt-link to="/posts">Posts</nuxt-link>
           </li>
-          <li class="swing-in-right-bck">
+          <li>
             <nuxt-link to="/chapters">Chapters</nuxt-link>
           </li>
-          <li class="swing-in-right-bck">
+          <li>
             <nuxt-link to="/gallery">Gallery</nuxt-link>
           </li>
-          <li class="swing-in-right-bck">
+          <li>
             <nuxt-link to="/about">About</nuxt-link>
           </li>
-          <li class="swing-in-right-bck">
+          <li>
             <nuxt-link to="/contact">Contact</nuxt-link>
           </li>
         </ul>
