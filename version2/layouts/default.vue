@@ -23,10 +23,10 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,400i,700&display=swap");
 
 :root {
-  --primary-font-face: "Open Sans", sans-serif;
-  --secondary-font-face: "Montserrat", sans-serif;
-  --primary-font-color: rgb(232, 242, 237);
-  --secondary-font-color: rgb(255, 230, 181);
+  --primary-font: "Montserrat", sans-serif;
+  --secondary-font: "Open Sans", sans-serif;
+  --primary-color: rgb(232, 242, 237);
+  --secondary-color: rgb(255, 230, 181);
   --primary-background: rgb(26, 39, 52);
   --shade: rgb(72, 72, 73);
 }
@@ -43,15 +43,13 @@ html {
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
 
 body {
   background: var(--primary-background);
-  font-family: var(--primary-font-face);
-  color: var(--primary-font-color);
+  font-family: var(--primary-font);
+  color: var(--primary-color);
   min-height: 100vh;
 }
 
@@ -61,11 +59,11 @@ a {
 
 a:link,
 a:visited {
-  color: var(--secondary-font-color);
+  color: var(--secondary-color);
 }
 
 a:hover {
-  color: var(--off-white);
+  color: var(--primary-color);
 }
 
 .wrapper {

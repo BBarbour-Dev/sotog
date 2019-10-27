@@ -36,6 +36,7 @@ header {
 
 .logo-image {
   max-width: 100%;
+  min-width: 325px;
 }
 
 .description {
@@ -47,7 +48,7 @@ header {
 
 h2 {
   font-style: italic;
-  color: var(--secondary-font-color);
+  color: var(--secondary-color);
   margin-bottom: 2rem;
   font-size: 1rem;
 }
@@ -63,12 +64,12 @@ h2 {
 }
 
 .start-here a {
-  font-family: var(--secondary-font-face);
+  font-family: var(--secondary-font);
   text-decoration: none;
-  color: var(--primary-font-color);
+  color: var(--primary-color);
 }
 
 .start-here a:hover {
-  color: var(--secondary-font-color);
+  color: var(--secondary-color);
 }
 </style>

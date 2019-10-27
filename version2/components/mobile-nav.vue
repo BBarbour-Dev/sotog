@@ -59,7 +59,7 @@ export default {
   right: -100px;
   top: -100px;
   z-index: 200;
-  background-color: var(--secondary-font-color);
+  background-color: var(--secondary-color);
   border-radius: 50%;
   height: 200px;
   width: 200px;
@@ -85,14 +85,14 @@ export default {
 }
 
 .menu-dark button {
-  color: var(--secondary-font-color);
+  color: var(--secondary-color);
   background-color: inherit;
 }
 
 .overlay {
   position: fixed;
   background: var(--primary-background);
-  color: var(--primary-font-color);
+  color: var(--primary-color);
   top: 0;
   left: 0;
   width: 100%;
@@ -137,11 +137,11 @@ export default {
 
 .overlay ul li a {
   text-decoration: none;
-  color: var(--secondary-font-color);
+  color: var(--secondary-color);
   text-transform: uppercase;
 }
 
 .overlay ul li a:hover {
-  color: var(--primary-font-color);
+  color: var(--primary-color);
 }
 </style>

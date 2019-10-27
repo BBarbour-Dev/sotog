@@ -1,14 +1,6 @@
 <template>
   <div class="container">
-    <h1>Home</h1>
-    <ul>
-      <li v-for="post in allPosts" :key="post._id">
-        <span>
-          {{post.title}} |
-          <nuxt-link :to="`/post/${post.slug.current}`">Read More</nuxt-link>
-        </span>
-      </li>
-    </ul>
+    <h1>Saga of the Old Gods</h1>
   </div>
 </template>
 
@@ -16,7 +8,7 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["allPosts"])
+    ...mapState(["allPosts", "allChapters"])
   }
 };
 </script>
@@ -28,5 +20,14 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  margin-top: 3rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
 }
 </style>
