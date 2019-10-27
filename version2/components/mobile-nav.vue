@@ -96,7 +96,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0%;
+  height: 0;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s, visbility, 0.35s, height 0.35s;
