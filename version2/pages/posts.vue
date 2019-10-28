@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Saga of the Old Gods</h1>
+    <h1>Posts</h1>
   </div>
 </template>
 
@@ -9,11 +9,11 @@ import { mapState } from "vuex";
 export default {
   head() {
     return {
-      title: "Home"
+      title: "Posts"
     };
   },
   computed: {
-    ...mapState(["allPosts", "allChapters"])
+    ...mapState(["allPosts"])
   }
 };
 </script>

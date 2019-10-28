@@ -14,22 +14,34 @@
       <nav>
         <ul>
           <li>
-            <nuxt-link to="/">Home</nuxt-link>
+            <nuxt-link to="/">
+              <span @click="toggleNav">Home</span>
+            </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/posts">Posts</nuxt-link>
+            <nuxt-link to="/posts">
+              <span @click="toggleNav">Posts</span>
+            </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/chapters">Chapters</nuxt-link>
+            <nuxt-link to="/chapters">
+              <span @click="toggleNav">Chapters</span>
+            </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/gallery">Gallery</nuxt-link>
+            <nuxt-link to="/gallery">
+              <span @click="toggleNav">Gallery</span>
+            </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/about">About</nuxt-link>
+            <nuxt-link to="/about">
+              <span @click="toggleNav">About</span>
+            </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/contact">Contact</nuxt-link>
+            <nuxt-link to="/contact">
+              <span @click="toggleNav">Contact</span>
+            </nuxt-link>
           </li>
         </ul>
       </nav>

@@ -16,7 +16,7 @@ export default {
     sanityDataset: process.env.SANITY_DATASET
   },
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate: 'Saga of the Old Gods - %s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

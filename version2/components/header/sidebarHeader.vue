@@ -42,11 +42,11 @@ export default {
 <style scoped>
 header {
   width: 100%;
-  min-height: 100vh;
+  min-height: 85vh;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
     url("~assets/ravenwing.png");
   background-attachment: fixed;
-  background-position: top;
+  background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -123,8 +123,10 @@ nav ul li a {
 
 @media (min-width: 1000px) {
   header {
+    min-height: 100%;
     justify-content: flex-start;
-    background-position: 50%;
+    background-position: left;
+    background-size: contain;
   }
 
   .start-here {

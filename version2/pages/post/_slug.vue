@@ -12,6 +12,11 @@
 import BlockContent from "sanity-blocks-vue-component";
 
 export default {
+  head() {
+    return {
+      title: `${this.post.title}`
+    };
+  },
   components: {
     BlockContent
   },

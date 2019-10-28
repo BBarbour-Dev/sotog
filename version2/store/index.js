@@ -3,6 +3,8 @@ import client from '../sanity/sanityClient';
 export const state = () => ({
   allPosts: [],
   allChapters: [],
+  allGalleryImages: [],
+  authorInfo: {},
   sanityConfig: {
     projectId: process.env.sanityProjectId,
     dataset: process.env.sanityDataset

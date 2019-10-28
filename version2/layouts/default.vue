@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import mobileNav from "../components/mobile-nav.vue";
+import mobileNav from "../components/header/mobile-nav.vue";
 import sidebarHeader from "../components/header/sidebarHeader.vue";
 
 export default {
@@ -52,7 +52,6 @@ body {
   background: var(--primary-background);
   font-family: var(--primary-font);
   color: var(--primary-color);
-  min-height: 100vh;
 }
 
 a {
@@ -70,6 +69,7 @@ a:hover {
 
 .wrapper {
   width: 100%;
+  min-height: 300vh;
   display: flex;
   flex-direction: column;
 }
@@ -86,5 +86,22 @@ a:hover {
   header {
     flex-basis: 30%;
   }
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
 }
 </style>
