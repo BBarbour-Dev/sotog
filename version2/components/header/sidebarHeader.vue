@@ -8,12 +8,34 @@
     <button class="start-here">
       <nuxt-link to="/chapter/chapter-one">Start From Beginning</nuxt-link>
     </button>
+    <nav>
+      <ul>
+        <li>
+          <nuxt-link to="/">Home</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/posts">Posts</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/chapters">Chapters</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/gallery">Gallery</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/about">About</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/contact">Contact</nuxt-link>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
 <script>
 export default {
-  name: "mobile-header"
+  name: "sidebar-header"
 };
 </script>
 
@@ -49,18 +71,19 @@ header {
 h2 {
   font-style: italic;
   color: var(--secondary-color);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
 }
 
 .start-here {
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
   background: none;
-  border: none;
   font-family: inherit;
   font-size: 1.25rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-weight: 700;
   text-transform: uppercase;
+  padding: 10px;
 }
 
 .start-here a {
@@ -71,5 +94,45 @@ h2 {
 
 .start-here a:hover {
   color: var(--secondary-color);
+}
+
+nav {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  text-align: center;
+}
+
+nav ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+nav ul li a {
+  font-family: var(--secondary-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+  header {
+    justify-content: flex-start;
+    background-position: 50%;
+  }
+
+  .start-here {
+    margin-bottom: 2rem;
+  }
+
+  nav {
+    display: block;
+  }
 }
 </style>

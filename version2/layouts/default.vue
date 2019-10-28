@@ -1,19 +1,21 @@
 <template>
   <div class="wrapper">
     <mobile-nav></mobile-nav>
-    <mobile-header></mobile-header>
-    <nuxt />
+    <sidebar-header></sidebar-header>
+    <main>
+      <nuxt />
+    </main>
   </div>
 </template>
 
 <script>
 import mobileNav from "../components/mobile-nav.vue";
-import mobileHeader from "../components/header/mobile-header";
+import sidebarHeader from "../components/header/sidebarHeader.vue";
 
 export default {
   name: "default-layout",
   components: {
-    mobileHeader,
+    sidebarHeader,
     mobileNav
   }
 };
@@ -67,7 +69,22 @@ a:hover {
 }
 
 .wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+@media (min-width: 1000px) {
+  .wrapper {
+    flex-direction: row;
+  }
+
+  main {
+    flex-basis: 70%;
+  }
+
+  header {
+    flex-basis: 30%;
+  }
 }
 </style>

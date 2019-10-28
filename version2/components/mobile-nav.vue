@@ -144,4 +144,10 @@ export default {
 .overlay ul li a:hover {
   color: var(--primary-color);
 }
+
+@media (min-width: 1000px) {
+  .menu {
+    display: none;
+  }
+}
 </style>
