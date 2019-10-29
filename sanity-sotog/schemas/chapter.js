@@ -42,10 +42,9 @@ export default {
       type: 'text'
     },
     {
-      name: 'pages',
-      title: 'Pages',
-      type: 'array',
-      of: [{ type: 'image' }]
+      name: 'docUrl',
+      title: 'Document URL',
+      type: 'url'
     }
   ],
   preview: {

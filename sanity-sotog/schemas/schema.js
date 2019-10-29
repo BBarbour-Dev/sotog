@@ -6,7 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // We import object and document schemas
 import blockContent from './blockContent';
-import post from './post';
+import update from './update';
 import author from './author';
 import chapter from './chapter';
 import galleryImage from './galleryImage';
@@ -15,5 +15,11 @@ import galleryImage from './galleryImage';
 export default createSchema({
   // We name our schema
   name: 'default',
-  types: schemaTypes.concat([post, author, blockContent, chapter, galleryImage])
+  types: schemaTypes.concat([
+    update,
+    author,
+    blockContent,
+    chapter,
+    galleryImage
+  ])
 });
