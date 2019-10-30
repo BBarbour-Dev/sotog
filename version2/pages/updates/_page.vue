@@ -6,20 +6,23 @@
       :projectId="sanityConfig.projectId"
       :dataset="sanityConfig.dataset"
     />-->
+    <pagination></pagination>
   </div>
 </template>
 
 <script>
 import BlockContent from "sanity-blocks-vue-component";
+import pagination from "../../components/updates/pagination.vue";
 
 export default {
+  components: {
+    BlockContent,
+    pagination
+  },
   head() {
     return {
       title: this.pageTitle
     };
-  },
-  components: {
-    BlockContent
   },
   async asyncData({ params, payload, store }) {
     const updatesIndex = params.page.toString() - 1;

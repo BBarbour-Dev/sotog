@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <mobile-nav></mobile-nav>
-    <sidebar-header></sidebar-header>
+    <logo-header></logo-header>
     <main>
       <nuxt />
     </main>
@@ -10,12 +10,12 @@
 
 <script>
 import mobileNav from "../components/header/mobile-nav.vue";
-import sidebarHeader from "../components/header/sidebarHeader.vue";
+import logoHeader from "../components/header/logo-header.vue";
 
 export default {
   name: "default-layout",
   components: {
-    sidebarHeader,
+    logoHeader,
     mobileNav
   }
 };

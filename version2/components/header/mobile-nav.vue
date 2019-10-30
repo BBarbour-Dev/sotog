@@ -10,48 +10,19 @@
         <i class="fas fa-bars"></i>
       </button>
     </div>
-    <div class="overlay" :class="{'overlay-open': open}">
-      <nav>
-        <ul>
-          <li>
-            <nuxt-link to="/">
-              <span @click="toggleNav">Home</span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/posts">
-              <span @click="toggleNav">Posts</span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/chapters">
-              <span @click="toggleNav">Chapters</span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/gallery">
-              <span @click="toggleNav">Gallery</span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/about">
-              <span @click="toggleNav">About</span>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/contact">
-              <span @click="toggleNav">Contact</span>
-            </nuxt-link>
-          </li>
-        </ul>
-      </nav>
+    <div class="overlay" :class="{'overlay-open': open}" @click="toggleNav">
+      <nav-links></nav-links>
     </div>
   </div>
 </template>
 
 <script>
+import navLinks from "./nav-links";
 export default {
   name: "mobile-nav",
+  components: {
+    navLinks
+  },
   data: function() {
     return {
       open: false
@@ -122,7 +93,7 @@ export default {
   visibility: visible;
 }
 
-.overlay nav {
+.overlay >>> nav {
   position: relative;
   height: 70%;
   top: 50%;
@@ -132,7 +103,7 @@ export default {
   text-align: center;
 }
 
-.overlay nav ul {
+.overlay >>> nav ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -141,19 +112,19 @@ export default {
   height: 100%;
 }
 
-.overlay ul li {
+.overlay >>> ul li {
   height: calc(100% / 6);
   min-height: 2.5rem;
   position: relative;
 }
 
-.overlay ul li a {
+.overlay >>> ul li a {
   text-decoration: none;
   color: var(--secondary-color);
   text-transform: uppercase;
 }
 
-.overlay ul li a:hover {
+.overlay >>> ul li a:hover {
   color: var(--primary-color);
 }
 
