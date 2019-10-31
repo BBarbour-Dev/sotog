@@ -44,11 +44,39 @@ export default {
 };
 
 async function fetchUpdates() {
-  //const query = `*[_type == 'update'] {_id, publishedAt, slug{current}, title, body, author->{name}, body} | order(_publishedAt desc)`;
+  //const query = `*[_type == 'update'] {_id, publishedAt, title, body, author->{name}} | order(_publishedAt desc)`;
   //const data = await client.fetch(query);
   const updates = [];
-  for (let i = 0; i <= 20; i += 1) {
-    updates.push({ title: `Update: ${i + 1}` });
+  for (let i = 0; i < 20; i += 1) {
+    updates.push({
+      title: `Test Update ${i + 1}`,
+      author: { name: 'KJ Sylva' },
+      publishedAt: `2019-10-31T04:00:00.000Z`,
+      body: JSON.parase(`{"body": [
+      {
+        "_key": "4a89dd6ae01e",
+        "_type": "block",
+        "children": [
+          {
+            "_key": "4a89dd6ae01e0",
+            "_type": "span",
+            "marks": [],
+            "text": "This is a test update."
+          }
+        ],
+        "markDefs": [],
+        "style": "normal"
+      },
+      {
+        "_key": "121107172168",
+        "_type": "image",
+        "asset": {
+          "_ref": "image-3e103f0f7f0f3398563e06c61408d05abd8442ef-374x374-jpg",
+          "_type": "reference"
+        }
+      }
+    ]}`)
+    });
   }
   const pages = chunk(updates, 5);
   const routes = pages.map((pageData, index) => {

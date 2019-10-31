@@ -1,12 +1,16 @@
 <template>
-  <div class="pagination">
-    <h3>Pages</h3>
+  <div class="pagination" v-if="allUpdates.length > 1">
+    <h3>Page(s)</h3>
     <ul>
       <li v-if="pathIndex > 1">
-        <nuxt-link :to="`/updates/${pathIndex - 1}`">Prev</nuxt-link>
+        <nuxt-link :to="`/updates/${pathIndex - 1}`">
+          <i class="fas fa-angle-double-left"></i>
+        </nuxt-link>
       </li>
       <li v-else>
-        <span class="grayed">Prev</span>
+        <span class="grayed">
+          <i class="fas fa-angle-double-left"></i>
+        </span>
       </li>
       <li v-for="(page, index) in allUpdates" :key="`Page ${index + 1}`">
         <span v-if="(index + 1) == pathIndex">
@@ -17,10 +21,14 @@
         </span>
       </li>
       <li v-if="pathIndex < allUpdates.length">
-        <nuxt-link :to="`/updates/${pathIndex + 1}`">Next</nuxt-link>
+        <nuxt-link :to="`/updates/${pathIndex + 1}`">
+          <i class="fas fa-angle-double-right"></i>
+        </nuxt-link>
       </li>
       <li v-else>
-        <span class="grayed">Next</span>
+        <span class="grayed">
+          <i class="fas fa-angle-double-right"></i>
+        </span>
       </li>
     </ul>
   </div>
@@ -44,13 +52,16 @@ export default {
 
 <style scoped>
 .pagination {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h3 {
   color: var(--secondary-color);
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 ul {
@@ -66,9 +77,5 @@ li:not(:last-child) {
 
 .grayed {
   color: var(--shade);
-}
-
-strong {
-  color: var(--secondary-color);
 }
 </style>

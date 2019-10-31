@@ -91,9 +91,7 @@ a:hover {
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2rem;
 }
 
 h1 {
