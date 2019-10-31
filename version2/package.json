@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@sanity/client": "^0.142.6",
+    "date-fns": "^2.6.0",
     "dotenv": "^8.2.0",
     "nuxt": "^2.10.1",
     "sanity-blocks-vue-component": "^0.1.0"

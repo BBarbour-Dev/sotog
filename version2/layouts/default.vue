@@ -28,8 +28,10 @@ export default {
   --primary-font: "Montserrat", sans-serif;
   --secondary-font: "Open Sans", sans-serif;
   --primary-color: rgb(232, 242, 237);
+  --dim: rgb(126, 134, 137);
   --secondary-color: rgb(255, 230, 181);
   --primary-background: rgb(26, 39, 52);
+  --panel-background: rgba(12, 20, 25, 0.75);
   --shade: rgb(72, 72, 73);
 }
 
@@ -54,6 +56,10 @@ body {
   color: var(--primary-color);
 }
 
+p {
+  line-height: 2;
+}
+
 a {
   color: vary(--secondary-font-color);
 }
@@ -69,9 +75,28 @@ a:hover {
 
 .wrapper {
   width: 100%;
-  min-height: 300vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: var(--secondary-color);
+  font-family: var(--secondary-font);
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+strong {
+  font-weight: 700px;
 }
 
 @media (min-width: 1000px) {
@@ -86,20 +111,9 @@ a:hover {
   header {
     flex-basis: 30%;
   }
-}
 
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  padding: 2rem;
-}
-
-h1 {
-  color: var(--secondary-color);
-  font-family: var(--secondary-font);
-  margin: 2rem 0;
-  text-transform: uppercase;
-  font-size: 2rem;
-  text-align: center;
+  .container {
+    padding: 4rem;
+  }
 }
 </style>

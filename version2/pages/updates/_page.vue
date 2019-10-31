@@ -2,16 +2,18 @@
   <div class="container">
     <h1>Updates</h1>
     <article v-for="(update, index) in updates" :key="`Update #${index + 1}`">
-      <h2>{{update.title}}</h2>
-      <!-- prettier-ignore -->
+      <h2>{{ update.title }}</h2>
+      <p class="timestamp">
+        <strong>Posted: </strong>
+        <em>{{ update.publishedAt }} ago</em>
+      </p>
       <block-content
-        class="content"
+        className="content"
         :blocks="update.body"
         :projectId="sanityConfig.projectId"
         :dataset="sanityConfig.dataset"
       />
-
-      <hr />
+      <p class="author">- {{ update.author.name }}</p>
     </article>
     <pagination></pagination>
   </div>
@@ -54,16 +56,46 @@ export default {
 <style scoped>
 article {
   margin-bottom: 2rem;
+  background: var(--panel-background);
+  padding: 2rem;
+  border-radius: 0.5rem;
 }
 
 h2 {
-  color: var(--secondary-color);
-  margin-bottom: 2rem;
+  color: var(--dim);
+  font-family: var(--secondary-font);
+  border-bottom: 1px solid var(--dim);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-block-content >>> img {
+.timestamp {
+  color: var(--dim);
+  text-align: right;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.author {
+  text-align: center;
+  color: var(--secondary-color);
+  margin-top: 1rem;
+}
+
+.content >>> img {
   max-width: 300px;
-  display: block;
-  margin: 1rem 0;
+}
+
+.content >>> p {
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+@media (min-width: 1000px) {
+  article {
+  }
+  .content >>> img {
+    max-width: 450px;
+  }
 }
 </style>
