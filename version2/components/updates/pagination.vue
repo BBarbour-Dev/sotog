@@ -13,11 +13,11 @@
         </span>
       </li>
       <li v-for="(page, index) in allUpdates" :key="`Page ${index + 1}`">
-        <span v-if="(index + 1) == pathIndex">
-          <strong>{{index + 1}}</strong>
+        <span v-if="index + 1 == pathIndex">
+          <strong>{{ index + 1 }}</strong>
         </span>
         <span v-else>
-          <nuxt-link :to="`/updates/${index + 1}`">{{index + 1}}</nuxt-link>
+          <nuxt-link :to="`/updates/${index + 1}`">{{ index + 1 }}</nuxt-link>
         </span>
       </li>
       <li v-if="pathIndex < allUpdates.length">
@@ -56,6 +56,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
 }
 
 h3 {
@@ -65,7 +66,6 @@ h3 {
 }
 
 ul {
-  margin-left: 1rem;
   padding: 0;
   display: flex;
   list-style-type: none;

@@ -100,6 +100,7 @@ main {
 .container {
   margin: 0 auto;
   padding: 2rem;
+  width: 100%;
 }
 
 h1 {

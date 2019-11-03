@@ -11,9 +11,6 @@ export default {
     return {
       title: "Home"
     };
-  },
-  computed: {
-    ...mapState(["allPosts", "allChapters"])
   }
 };
 </script>

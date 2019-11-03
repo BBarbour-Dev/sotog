@@ -47,8 +47,15 @@ async function fetchUpdates() {
 }
 
 async function fetchChapters() {
-  const query = `*[_type == 'chapter']{title, description, publishedAt, slug{current}, coverImage{asset->{url}}, pages[]{asset->{url}}} | order(publishedAt desc)`;
-  return await client.fetch(query);
+  const query = `*[_type == 'chapter']{title, description, publishedAt, docUrl, coverImage{asset->{url}}, pages[]{asset->{url}}} | order(publishedAt desc)`;
+  const chapters = await client.fetch(query);
+  await chapters.forEach(chapter => {
+    chapter.publishedAt = formatDistanceToNow(
+      Date.parse(chapter.publishedAt),
+      Date.now()
+    );
+  });
+  return chapters;
 }
 
 function chunk(arr, size) {

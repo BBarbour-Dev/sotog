@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <h1>Updates</h1>
-    <div
-      class="update"
-      v-for="(update, index) in updates"
-      :key="`Update #${index + 1}`"
-    >
-      <update-card :update="update" :sanity-config="sanityConfig"></update-card>
+    <div class="updates">
+      <update-card
+        v-for="update in updates"
+        :key="update._id"
+        :update="update"
+        :sanity-config="sanityConfig"
+      ></update-card>
     </div>
     <pagination />
   </div>
@@ -48,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-.update >>> article:last-child {
+article:not(:last-child) {
   margin-bottom: 2rem;
 }
 </style>

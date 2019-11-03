@@ -56,7 +56,8 @@ h2 {
 }
 
 .content >>> img {
-  max-width: 300px;
+  max-width: 100%;
+  max-height: 65vh;
 }
 
 .content >>> p {
@@ -65,8 +66,8 @@ h2 {
 }
 
 @media (min-width: 1000px) {
-  .content >>> img {
-    max-width: 450px;
-  }
+  /* .content >>> img {
+    max-width: 100%;
+  } */
 }
 </style>
