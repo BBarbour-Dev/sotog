@@ -1,9 +1,10 @@
 <template>
   <div class="wrapper">
-    <mobile-nav></mobile-nav>
-    <logo-header></logo-header>
+    <mobile-nav />
+    <logo-header />
     <main>
       <nuxt />
+      <page-footer />
     </main>
   </div>
 </template>
@@ -11,12 +12,14 @@
 <script>
 import mobileNav from "../components/header/mobile-nav.vue";
 import logoHeader from "../components/header/logo-header.vue";
+import pageFooter from "../components/page-footer.vue";
 
 export default {
   name: "default-layout",
   components: {
     logoHeader,
-    mobileNav
+    mobileNav,
+    pageFooter
   }
 };
 </script>
@@ -50,6 +53,14 @@ html {
   box-sizing: border-box;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 body {
   background: var(--primary-background);
   font-family: var(--primary-font);
@@ -74,10 +85,16 @@ a:hover {
 }
 
 .wrapper {
-  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container {

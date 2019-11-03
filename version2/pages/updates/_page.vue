@@ -1,31 +1,24 @@
 <template>
   <div class="container">
     <h1>Updates</h1>
-    <article v-for="(update, index) in updates" :key="`Update #${index + 1}`">
-      <h2>{{ update.title }}</h2>
-      <p class="timestamp">
-        <strong>Posted: </strong>
-        <em>{{ update.publishedAt }} ago</em>
-      </p>
-      <block-content
-        className="content"
-        :blocks="update.body"
-        :projectId="sanityConfig.projectId"
-        :dataset="sanityConfig.dataset"
-      />
-      <p class="author">- {{ update.author.name }}</p>
-    </article>
-    <pagination></pagination>
+    <div
+      class="update"
+      v-for="(update, index) in updates"
+      :key="`Update #${index + 1}`"
+    >
+      <update-card :update="update" :sanity-config="sanityConfig"></update-card>
+    </div>
+    <pagination />
   </div>
 </template>
 
 <script>
-import BlockContent from "sanity-blocks-vue-component";
 import pagination from "../../components/updates/pagination.vue";
+import updateCard from "../../components/updates/update-card";
 
 export default {
   components: {
-    BlockContent,
+    updateCard,
     pagination
   },
   head() {
@@ -37,7 +30,8 @@ export default {
     const updatesIndex = params.page.toString() - 1;
     if (payload) {
       return {
-        currentPage: params.page,
+        updatesIndex: updatesIndex,
+        updates: payload.updates,
         pageTitle: payload.pageTitle,
         sanityConfig: store.state.sanityConfig
       };
@@ -54,48 +48,7 @@ export default {
 </script>
 
 <style scoped>
-article {
+.update >>> article:last-child {
   margin-bottom: 2rem;
-  background: var(--panel-background);
-  padding: 2rem;
-  border-radius: 0.5rem;
-}
-
-h2 {
-  color: var(--dim);
-  font-family: var(--secondary-font);
-  border-bottom: 1px solid var(--dim);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.timestamp {
-  color: var(--dim);
-  text-align: right;
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
-}
-
-.author {
-  text-align: center;
-  color: var(--secondary-color);
-  margin-top: 1rem;
-}
-
-.content >>> img {
-  max-width: 300px;
-}
-
-.content >>> p {
-  margin-top: 1rem;
-  text-align: justify;
-}
-
-@media (min-width: 1000px) {
-  article {
-  }
-  .content >>> img {
-    max-width: 450px;
-  }
 }
 </style>

@@ -29,38 +29,6 @@ export const actions = {
 };
 
 async function fetchUpdates() {
-  // const updates = [];
-  // for (let i = 0; i < 20; i += 1) {
-  //   updates.push({
-  //     title: `Test Update ${i + 1}`,
-  //     author: { name: 'KJ Sylva' },
-  //     publishedAt: `2019-10-31T04:00:00.000Z`,
-  //     body: JSON.parse(`[
-  //     {
-  //       "_key": "4a89dd6ae01e",
-  //       "_type": "block",
-  //       "children": [
-  //         {
-  //           "_key": "4a89dd6ae01e0",
-  //           "_type": "span",
-  //           "marks": [],
-  //           "text": "This is a test update."
-  //         }
-  //       ],
-  //       "markDefs": [],
-  //       "style": "normal"
-  //     },
-  //     {
-  //       "_key": "121107172168",
-  //       "_type": "image",
-  //       "asset": {
-  //         "_ref": "image-b45423adcdff73390487b45fad6208b41ea214f5-2100x3150-jpg",
-  //         "_type": "reference"
-  //       }
-  //     }
-  //   ]`)
-  //   });
-  // }
   const query = `*[_type == 'update'] {_id, publishedAt, title, body, author->{name}} | order(publishedAt desc)`;
   const updates = await client.fetch(query);
   updates.forEach(update => {

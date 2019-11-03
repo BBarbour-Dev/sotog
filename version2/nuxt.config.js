@@ -9,6 +9,8 @@ const client = sanityClient({
   useCdn: false
 });
 
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+
 export default {
   mode: 'universal',
   env: {
@@ -34,58 +36,38 @@ export default {
       }
     ]
   },
-  loading: { color: '#fff' },
+  pageTransition: {
+    name: 'fade'
+  },
+  loading: {
+    color: 'rgb(255, 230, 181);',
+    height: '2px'
+  },
   generate: {
     routes: async () => {
       const updateRoutes = await fetchUpdates();
+      console.log(updateRoutes);
       return [...updateRoutes];
     }
   }
 };
 
 async function fetchUpdates() {
-  //const query = `*[_type == 'update'] {_id, publishedAt, title, body, author->{name}} | order(_publishedAt desc)`;
-  //const data = await client.fetch(query);
-  const updates = [];
-  for (let i = 0; i < 20; i += 1) {
-    updates.push({
-      title: `Test Update ${i + 1}`,
-      author: { name: 'KJ Sylva' },
-      publishedAt: `2019-10-31T04:00:00.000Z`,
-      body: JSON.parase(`{"body": [
-      {
-        "_key": "4a89dd6ae01e",
-        "_type": "block",
-        "children": [
-          {
-            "_key": "4a89dd6ae01e0",
-            "_type": "span",
-            "marks": [],
-            "text": "This is a test update."
-          }
-        ],
-        "markDefs": [],
-        "style": "normal"
-      },
-      {
-        "_key": "121107172168",
-        "_type": "image",
-        "asset": {
-          "_ref": "image-3e103f0f7f0f3398563e06c61408d05abd8442ef-374x374-jpg",
-          "_type": "reference"
-        }
-      }
-    ]}`)
-    });
-  }
+  const query = `*[_type == 'update'] {_id, publishedAt, title, body, author->{name}} | order(publishedAt desc)`;
+  const updates = await client.fetch(query);
+  updates.forEach(update => {
+    update.publishedAt = formatDistanceToNow(
+      Date.parse(update.publishedAt),
+      Date.now()
+    );
+  });
   const pages = chunk(updates, 5);
-  const routes = pages.map((pageData, index) => {
+  return pages.map((pageData, index) => {
     return {
       route: `/updates/${index + 1}`,
       payload: { updates: pageData, pageTitle: `Updates: Page ${index + 1}` }
     };
   });
-  return routes;
 }
 
 function chunk(arr, size) {

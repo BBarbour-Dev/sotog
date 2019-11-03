@@ -1,23 +1,34 @@
 <template>
   <header>
-    <img class="logo-image" src="~/assets/logo.png" alt="Saga of the Old Gods" />
-    <p
-      class="description"
-    >After experiencing a prophecy dream about war and destruction, Brie seeks out the truth behind them only to find out that there are far more details about her existence and who she truly is than she could have ever imagined.</p>
+    <img
+      class="logo-image"
+      src="~/assets/logo.png"
+      alt="Saga of the Old Gods"
+    />
+    <p class="description">
+      After experiencing a prophecy dream about war and destruction, Brie seeks
+      out the truth behind them only to find out that there are far more details
+      about her existence and who she truly is than she could have ever
+      imagined.
+    </p>
     <h2>New to the series?</h2>
     <button class="start-here">
       <nuxt-link to="/chapter/chapter-one">Start From Beginning</nuxt-link>
     </button>
     <nav-links></nav-links>
+    <social-media />
   </header>
 </template>
 
 <script>
 import navLinks from "./nav-links";
+import socialMedia from "../social-media";
+
 export default {
   name: "logo-header",
   components: {
-    navLinks
+    navLinks,
+    socialMedia
   }
 };
 </script>
@@ -104,6 +115,10 @@ header >>> nav ul li a {
   text-decoration: none;
 }
 
+header >>> .social-media {
+  display: none;
+}
+
 @media (min-width: 1000px) {
   header {
     min-height: 100%;
@@ -118,6 +133,11 @@ header >>> nav ul li a {
 
   header >>> nav {
     display: block;
+    margin-bottom: 1rem;
+  }
+
+  header >>> .social-media {
+    display: flex;
   }
 }
 </style>
