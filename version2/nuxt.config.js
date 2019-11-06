@@ -64,7 +64,7 @@ async function fetchUpdates() {
   const pages = chunk(updates, 5);
   return pages.map((pageData, index) => {
     return {
-      route: `/updates/${index + 1}`,
+      route: index > 0 ? `/updates/${index + 1}` : '/updates',
       payload: { updates: pageData, pageTitle: `Updates: Page ${index + 1}` }
     };
   });

@@ -1,9 +1,9 @@
 <template>
-  <div class="pagination" v-if="allUpdates.length > 1">
+  <div class="pagination" v-if="allContent.length > 1">
     <h3>Page(s)</h3>
     <ul>
       <li v-if="pathIndex > 1">
-        <nuxt-link :to="`/updates/${pathIndex - 1}`">
+        <nuxt-link :to="`/${path}${pathIndex > 2 ? '/' + pathIndex - 1 : ''}`">
           <i class="fas fa-angle-double-left"></i>
         </nuxt-link>
       </li>
@@ -12,16 +12,16 @@
           <i class="fas fa-angle-double-left"></i>
         </span>
       </li>
-      <li v-for="(page, index) in allUpdates" :key="`Page ${index + 1}`">
+      <li v-for="(page, index) in allContent" :key="`Page ${index + 1}`">
         <span v-if="index + 1 == pathIndex">
           <strong>{{ index + 1 }}</strong>
         </span>
         <span v-else>
-          <nuxt-link :to="`/updates/${index + 1}`">{{ index + 1 }}</nuxt-link>
+          <nuxt-link :to="`/${path}/${index + 1}`">{{ index + 1 }}</nuxt-link>
         </span>
       </li>
-      <li v-if="pathIndex < allUpdates.length">
-        <nuxt-link :to="`/updates/${pathIndex + 1}`">
+      <li v-if="pathIndex < allContent.length">
+        <nuxt-link :to="`/${path}/${pathIndex + 1}`">
           <i class="fas fa-angle-double-right"></i>
         </nuxt-link>
       </li>
@@ -35,18 +35,15 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
   name: "pagination",
   data: function() {
     return {
-      pathIndex: parseInt(this.$route.params.page)
+      path: this.$route.path.split("/")[1],
+      pathIndex: this.$route.params.page ? parseInt(this.$route.params.page) : 1
     };
   },
-  computed: {
-    ...mapState(["allUpdates"])
-  }
+  props: ["allContent"]
 };
 </script>
 

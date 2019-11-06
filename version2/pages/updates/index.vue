@@ -28,7 +28,7 @@ export default {
     };
   },
   async asyncData({ params, payload, store }) {
-    const updatesIndex = params.page.toString() - 1;
+    const updatesIndex = 0;
     if (payload) {
       return {
         updatesIndex: updatesIndex,

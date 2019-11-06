@@ -5,7 +5,7 @@
         <nuxt-link to="/">Home</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/updates/1">Updates</nuxt-link>
+        <nuxt-link to="/updates">Updates</nuxt-link>
       </li>
       <li>
         <nuxt-link to="/chapters">Chapters</nuxt-link>
