@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import mobileNav from "../components/header/mobile-nav.vue";
-import logoHeader from "../components/header/logo-header.vue";
-import pageFooter from "../components/page-footer.vue";
+import mobileNav from "../components/wrapper/mobile-nav.vue";
+import logoHeader from "../components/wrapper/logo-header.vue";
+import pageFooter from "../components/wrapper/page-footer.vue";
 
 export default {
   name: "default-layout",

@@ -22,7 +22,7 @@
 
 <script>
 import navLinks from "./nav-links";
-import socialMedia from "../social-media";
+import socialMedia from "./social-media";
 
 export default {
   name: "logo-header",
