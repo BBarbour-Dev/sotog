@@ -27,7 +27,7 @@ export default {
       title: this.pageTitle
     };
   },
-  async asyncData({ params, payload, store }) {
+  asyncData({ params, payload, store }) {
     const updatesIndex = 0;
     if (payload) {
       return {

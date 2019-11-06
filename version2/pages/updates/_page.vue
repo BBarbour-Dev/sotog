@@ -27,23 +27,27 @@ export default {
       title: this.pageTitle
     };
   },
-  async asyncData({ params, payload, store }) {
-    const updatesIndex = params.page.toString() - 1;
-    if (payload) {
-      return {
-        updatesIndex: updatesIndex,
-        updates: payload.updates,
-        pageTitle: payload.pageTitle,
-        sanityConfig: store.state.sanityConfig
-      };
-    } else {
-      return {
-        allUpdates: store.state.allUpdates,
-        updatesIndex: updatesIndex,
-        updates: store.state.allUpdates[updatesIndex].updates,
-        pageTitle: store.state.allUpdates[updatesIndex].pageTitle,
-        sanityConfig: store.state.sanityConfig
-      };
+  async asyncData({ params, payload, store, error }) {
+    try {
+      const updatesIndex = params.page.toString() - 1;
+      if (payload) {
+        return {
+          updatesIndex: updatesIndex,
+          updates: payload.updates,
+          pageTitle: payload.pageTitle,
+          sanityConfig: store.state.sanityConfig
+        };
+      } else {
+        return {
+          allUpdates: store.state.allUpdates,
+          updatesIndex: updatesIndex,
+          updates: store.state.allUpdates[updatesIndex].updates,
+          pageTitle: store.state.allUpdates[updatesIndex].pageTitle,
+          sanityConfig: store.state.sanityConfig
+        };
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: "Not found." });
     }
   }
 };

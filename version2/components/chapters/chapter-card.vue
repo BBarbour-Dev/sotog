@@ -6,14 +6,12 @@
     <div class="chapter-info">
       <h2>{{ chapter.title }}</h2>
       <p class="timestamp">
-        <strong>Published: </strong>
+        <strong>Published:</strong>
         <em>{{ chapter.publishedAt }} ago</em>
       </p>
       <p class="description">{{ chapter.description }}</p>
       <button>
-        <a :href="chapter.docUrl" target="_blank" rel="noopener noreferrer"
-          >Read Chapter</a
-        >
+        <a :href="chapter.docUrl" target="_blank" rel="noopener noreferrer">Read Chapter</a>
       </button>
     </div>
   </section>
@@ -22,10 +20,7 @@
 <script>
 export default {
   name: "chapter-card",
-  props: ["chapter"],
-  mounted() {
-    console.log(this.chapter.publishedAt);
-  }
+  props: ["chapter"]
 };
 </script>
 

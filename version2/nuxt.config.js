@@ -65,7 +65,10 @@ async function fetchUpdates() {
   return pages.map((pageData, index) => {
     return {
       route: index > 0 ? `/updates/${index + 1}` : '/updates',
-      payload: { updates: pageData, pageTitle: `Updates: Page ${index + 1}` }
+      payload: {
+        updates: pageData,
+        pageTitle: index === 0 ? 'Updates' : `Updates: Page ${index + 1}`
+      }
     };
   });
 }

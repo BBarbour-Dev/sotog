@@ -3,7 +3,7 @@
     <h3>Page(s)</h3>
     <ul>
       <li v-if="pathIndex > 1">
-        <nuxt-link :to="`/${path}${pathIndex > 2 ? '/' + pathIndex - 1 : ''}`">
+        <nuxt-link :to="`/${path}`">
           <i class="fas fa-angle-double-left"></i>
         </nuxt-link>
       </li>
@@ -21,7 +21,7 @@
         </span>
       </li>
       <li v-if="pathIndex < allContent.length">
-        <nuxt-link :to="`/${path}/${pathIndex + 1}`">
+        <nuxt-link :to="`/${path}/${allContent.length}`">
           <i class="fas fa-angle-double-right"></i>
         </nuxt-link>
       </li>

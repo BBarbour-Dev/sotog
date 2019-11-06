@@ -41,7 +41,7 @@ async function fetchUpdates() {
   return pages.map((pageData, index) => {
     return {
       updates: pageData,
-      pageTitle: `Updates: Page ${index + 1}`
+      pageTitle: index === 0 ? 'Updates' : `Updates: Page ${index + 1}`
     };
   });
 }
@@ -55,7 +55,13 @@ async function fetchChapters() {
       Date.now()
     );
   });
-  return chapters;
+  const pages = chunk(chapters, 5);
+  return pages.map((pageData, index) => {
+    return {
+      chapters: pageData,
+      pageTitle: index === 0 ? 'Chapters' : `Chapters: Page ${index + 1}`
+    };
+  });
 }
 
 function chunk(arr, size) {
