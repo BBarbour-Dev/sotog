@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'imageName',
+      name: 'name',
       title: 'Image Name',
       type: 'string'
     },

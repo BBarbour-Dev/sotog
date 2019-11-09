@@ -13,7 +13,12 @@
     </p>
     <h2>New to the series?</h2>
     <button class="start-here">
-      <nuxt-link to="/chapter/chapter-one">Start From Beginning</nuxt-link>
+      <a
+        href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3Aab177feb-c271-4e96-acaa-21b093aacc82&fbclid=IwAR3HQqumKifdeKHFFJSppuRa5yHBW2ZsddkHBlni3XTRWx2YnrSivpNaK1A"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Start From Beginning</a
+      >
     </button>
     <nav-links></nav-links>
     <social-media />

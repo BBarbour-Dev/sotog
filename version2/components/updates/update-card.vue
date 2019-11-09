@@ -4,6 +4,8 @@
     <p class="timestamp">
       <strong>Posted: </strong>
       <em>{{ update.publishedAt }} ago</em>
+      by
+      <span class="author"> <nuxt-link to="/about">KJ Sylva</nuxt-link></span>
     </p>
     <block-content
       className="content"
@@ -11,7 +13,6 @@
       :projectId="sanityConfig.projectId"
       :dataset="sanityConfig.dataset"
     />
-    <p class="author">- {{ update.author.name }}</p>
   </article>
 </template>
 
@@ -50,9 +51,7 @@ h2 {
 }
 
 .author {
-  text-align: center;
   color: var(--secondary-color);
-  margin-top: 1rem;
 }
 
 .content >>> img {

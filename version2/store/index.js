@@ -18,6 +18,9 @@ export const mutations = {
   },
   addChapters(state, chapters) {
     state.allChapters = chapters;
+  },
+  addGalleryImages(state, galleryImages) {
+    state.allGalleryImages = galleryImages;
   }
 };
 
@@ -25,6 +28,7 @@ export const actions = {
   async nuxtServerInit({ commit }) {
     commit('addUpdates', await fetchUpdates());
     commit('addChapters', await fetchChapters());
+    commit('addGalleryImages', await fetchGalleryImages());
   }
 };
 
@@ -49,7 +53,7 @@ async function fetchUpdates() {
 async function fetchChapters() {
   const query = `*[_type == 'chapter']{title, description, publishedAt, docUrl, coverImage{asset->{url}}, pages[]{asset->{url}}} | order(publishedAt desc)`;
   const chapters = await client.fetch(query);
-  await chapters.forEach(chapter => {
+  chapters.forEach(chapter => {
     chapter.publishedAt = formatDistanceToNow(
       Date.parse(chapter.publishedAt),
       Date.now()
@@ -60,6 +64,24 @@ async function fetchChapters() {
     return {
       chapters: pageData,
       pageTitle: index === 0 ? 'Chapters' : `Chapters: Page ${index + 1}`
+    };
+  });
+}
+
+async function fetchGalleryImages() {
+  const query = `*[_type == 'galleryImage']{_id, image->, imageDescription, name}`;
+  const image = await client.fetch(query);
+  const gallery = [];
+
+  for (let i = 0; i < 20; i += 1) {
+    gallery.push(image[0]);
+  }
+
+  const pages = chunk(gallery, 10);
+  return pages.map((pageData, index) => {
+    return {
+      galleryImages: pageData,
+      pageTitle: index === 0 ? 'Gallery' : `Gallery: Page ${index + 1}`
     };
   });
 }

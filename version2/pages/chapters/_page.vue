@@ -1,14 +1,18 @@
 <template>
   <div class="container">
     <h1>Chapters</h1>
-    <chapter-card v-for="chapter in chapters" :key="chapter._id" :chapter="chapter" />
+    <chapter-card
+      v-for="chapter in chapters"
+      :key="chapter._id"
+      :chapter="chapter"
+    />
     <pagination :all-content="allChapters" />
   </div>
 </template>
 
 <script>
 import chapterCard from "../../components/chapters/chapter-card.vue";
-import pagination from "../../components/pagination.vue";
+import pagination from "../../components/utility/pagination.vue";
 export default {
   head() {
     return {

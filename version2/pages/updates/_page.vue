@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import pagination from "../../components/pagination.vue";
+import pagination from "../../components/utility/pagination.vue";
 import updateCard from "../../components/updates/update-card";
 
 export default {
