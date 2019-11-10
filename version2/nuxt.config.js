@@ -46,8 +46,9 @@ export default {
   generate: {
     routes: async () => {
       const updateRoutes = await fetchUpdates();
-      console.log(updateRoutes);
-      return [...updateRoutes];
+      const chapterRoutes = await fetchChapters();
+      const galleryRoutes = await fetchGalleryImages();
+      return [...updateRoutes, ...chapterRoutes, ...galleryRoutes];
     }
   }
 };
@@ -66,8 +67,47 @@ async function fetchUpdates() {
     return {
       route: index > 0 ? `/updates/${index + 1}` : '/updates',
       payload: {
+        allUpdates: pages,
         updates: pageData,
         pageTitle: index === 0 ? 'Updates' : `Updates: Page ${index + 1}`
+      }
+    };
+  });
+}
+
+async function fetchChapters() {
+  const query = `*[_type == 'chapter']{title, description, publishedAt, docUrl, coverImage{asset->{url}}, pages[]{asset->{url}}} | order(publishedAt desc)`;
+  const chapters = await client.fetch(query);
+  chapters.forEach(chapter => {
+    chapter.publishedAt = formatDistanceToNow(
+      Date.parse(chapter.publishedAt),
+      Date.now()
+    );
+  });
+  const pages = chunk(chapters, 5);
+  return pages.map((pageData, index) => {
+    return {
+      route: index > 0 ? `/chapters/${index + 1}` : '/chapters',
+      payload: {
+        allChapters: pages,
+        chapters: pageData,
+        pageTitle: index === 0 ? 'Chapters' : `Chapters: Page ${index + 1}`
+      }
+    };
+  });
+}
+
+async function fetchGalleryImages() {
+  const query = `*[_type == 'galleryImage']{_id, _updatedAt, image{asset->{url}}, imageDescription, name} | order(_updatedAt desc)`;
+  const gallery = await client.fetch(query);
+  const pages = chunk(gallery, 12);
+  return pages.map((pageData, index) => {
+    return {
+      route: index > 0 ? `/gallery/${index + 1}` : '/gallery',
+      payload: {
+        allGalleryImages: pages,
+        galleryImages: pageData,
+        pageTitle: index === 0 ? 'Gallery' : `Gallery: Page ${index + 1}`
       }
     };
   });

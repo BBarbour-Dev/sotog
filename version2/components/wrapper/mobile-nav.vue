@@ -1,6 +1,11 @@
 <template>
   <div class="menu">
-    <div class="menu-toggle" :class="{'menu-dark': open}" @click="toggleNav" v-if="open">
+    <div
+      class="menu-toggle"
+      :class="{ 'menu-dark': open }"
+      @click="toggleNav"
+      v-if="open"
+    >
       <button>
         <i class="fas fa-times"></i>
       </button>
@@ -10,7 +15,7 @@
         <i class="fas fa-bars"></i>
       </button>
     </div>
-    <div class="overlay" :class="{'overlay-open': open}" @click="toggleNav">
+    <div class="overlay" :class="{ 'overlay-open': open }" @click="toggleNav">
       <nav-links></nav-links>
     </div>
   </div>
@@ -65,6 +70,7 @@ export default {
   top: 114px;
   left: 42px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .menu-dark button {

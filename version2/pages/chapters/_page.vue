@@ -28,6 +28,7 @@ export default {
       const chaptersIndex = params.page.toString() - 1;
       if (payload) {
         return {
+          allChapters: payload.allChapters,
           chaptersIndex: chaptersIndex,
           chapters: payload.chapters,
           pageTitle: payload.pageTitle

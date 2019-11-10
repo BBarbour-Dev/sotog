@@ -34,7 +34,7 @@ export default {
   --dim: rgb(126, 134, 137);
   --secondary-color: rgb(255, 230, 181);
   --primary-background: rgb(26, 39, 52);
-  --panel-background: rgba(12, 20, 25, 0.75);
+  --panel-background: rgba(12, 20, 25, 0.95);
   --shade: rgb(72, 72, 73);
 }
 

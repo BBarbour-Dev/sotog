@@ -31,6 +31,7 @@ export default {
     const updatesIndex = 0;
     if (payload) {
       return {
+        allUpdates: payload.allUpdates,
         updatesIndex: updatesIndex,
         updates: payload.updates,
         pageTitle: payload.pageTitle,

@@ -23,21 +23,26 @@ export default {
     chapterCard,
     pagination
   },
-  asyncData({ params, payload, store }) {
-    const chaptersIndex = 0;
-    if (payload) {
-      return {
-        chaptersIndex: chaptersIndex,
-        chapters: payload.chapters,
-        pageTitle: payload.pageTitle
-      };
-    } else {
-      return {
-        allChapters: store.state.allChapters,
-        chaptersIndex: chaptersIndex,
-        chapters: store.state.allChapters[chaptersIndex].chapters,
-        pageTitle: store.state.allChapters[chaptersIndex].pageTitle
-      };
+  asyncData({ params, payload, store, error }) {
+    try {
+      const chaptersIndex = 0;
+      if (payload) {
+        return {
+          allChapters: payload.allChapters,
+          chaptersIndex: chaptersIndex,
+          chapters: payload.chapters,
+          pageTitle: payload.pageTitle
+        };
+      } else {
+        return {
+          allChapters: store.state.allChapters,
+          chaptersIndex: chaptersIndex,
+          chapters: store.state.allChapters[chaptersIndex].chapters,
+          pageTitle: store.state.allChapters[chaptersIndex].pageTitle
+        };
+      }
+    } catch (err) {
+      error({ statusCode: 404, message: "Not found." });
     }
   }
 };

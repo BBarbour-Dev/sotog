@@ -32,6 +32,7 @@ export default {
       const updatesIndex = params.page.toString() - 1;
       if (payload) {
         return {
+          allUpdates: payload.allUpdates,
           updatesIndex: updatesIndex,
           updates: payload.updates,
           pageTitle: payload.pageTitle,

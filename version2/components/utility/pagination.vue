@@ -16,6 +16,9 @@
         <span v-if="index + 1 == pathIndex">
           <strong>{{ index + 1 }}</strong>
         </span>
+        <span v-else-if="index + 1 === 1">
+          <nuxt-link :to="`/${path}`">{{ index + 1 }}</nuxt-link>
+        </span>
         <span v-else>
           <nuxt-link :to="`/${path}/${index + 1}`">{{ index + 1 }}</nuxt-link>
         </span>
