@@ -1,15 +1,22 @@
 <template>
   <div class="container">
     <h1>Gallery</h1>
-    <div v-for="image in galleryImages" :key="image._id">
-      <h2>{{ image.name }}</h2>
-    </div>
+    <section class="gallery">
+      <thumbnail
+        v-for="galleryItem in galleryImages"
+        :key="galleryItem._id"
+        :url="galleryItem.image.asset.url"
+        :alt-text="galleryItem.name"
+        :description="galleryItem.imageDescription"
+      />
+    </section>
     <pagination :all-content="allGalleryImages" />
   </div>
 </template>
 
 <script>
 import pagination from "../../components/utility/pagination.vue";
+import thumbnail from "../../components/gallery/thumbnail.vue";
 export default {
   head() {
     return {
@@ -17,7 +24,8 @@ export default {
     };
   },
   components: {
-    pagination
+    pagination,
+    thumbnail
   },
   asyncData({ params, payload, store }) {
     const galleryIndex = 0;
@@ -39,5 +47,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
 </style>

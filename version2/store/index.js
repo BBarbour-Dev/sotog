@@ -29,6 +29,9 @@ export const actions = {
     commit('addUpdates', await fetchUpdates());
     commit('addChapters', await fetchChapters());
     commit('addGalleryImages', await fetchGalleryImages());
+    console.log(
+      this.state.allGalleryImages[0].galleryImages[0].image.asset.url
+    );
   }
 };
 
@@ -69,7 +72,7 @@ async function fetchChapters() {
 }
 
 async function fetchGalleryImages() {
-  const query = `*[_type == 'galleryImage']{_id, image->, imageDescription, name}`;
+  const query = `*[_type == 'galleryImage']{_id, _updatedAt, image{asset->{url}}, imageDescription, name} | order(_updatedAt desc)`;
   const image = await client.fetch(query);
   const gallery = [];
 
