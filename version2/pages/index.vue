@@ -46,12 +46,13 @@ h1 {
   margin-bottom: 5rem;
 }
 h2 {
+  margin-top: 5rem;
   margin-bottom: 1rem;
   font-family: var(--secondary-font);
   text-transform: uppercase;
 }
 .button-row {
-  margin: 1rem 0 5rem 0;
+  margin-top: 1rem;
   text-align: center;
 }
 </style>
