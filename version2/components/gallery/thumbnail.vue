@@ -24,6 +24,7 @@ img {
   object-fit: cover;
   cursor: pointer;
   margin: 1rem 0;
+  border-radius: 5px;
 }
 
 figcaption {
