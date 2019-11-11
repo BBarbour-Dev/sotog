@@ -12,7 +12,7 @@
       imagined.
     </p>
     <h2>New to the series?</h2>
-    <button class="start-here">
+    <button class="button">
       <a
         href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3Aab177feb-c271-4e96-acaa-21b093aacc82&fbclid=IwAR3HQqumKifdeKHFFJSppuRa5yHBW2ZsddkHBlni3XTRWx2YnrSivpNaK1A"
         target="_blank"
@@ -74,25 +74,8 @@ h2 {
   font-size: 1rem;
 }
 
-.start-here {
-  border: 2px solid var(--secondary-color);
-  border-radius: 5px;
-  background: none;
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 10px;
-}
-
-.start-here a {
-  font-family: var(--secondary-font);
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-.start-here a:hover {
-  color: var(--secondary-color);
+button {
+  margin-bottom: 1rem;
 }
 
 header >>> nav {

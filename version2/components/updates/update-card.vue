@@ -45,7 +45,6 @@ h2 {
 
 .timestamp {
   color: var(--dim);
-  text-align: right;
   font-size: 0.85rem;
   margin-bottom: 1rem;
 }

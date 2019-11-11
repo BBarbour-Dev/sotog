@@ -10,9 +10,13 @@
         <em>{{ chapter.publishedAt }} ago</em>
       </p>
       <p class="description">{{ chapter.description }}</p>
-      <button>
-        <a :href="chapter.docUrl" target="_blank" rel="noopener noreferrer">Read Chapter</a>
-      </button>
+      <div class="button-row">
+        <button class="button">
+          <a :href="chapter.docUrl" target="_blank" rel="noopener noreferrer"
+            >Read Chapter</a
+          >
+        </button>
+      </div>
     </div>
   </section>
 </template>
@@ -50,7 +54,6 @@ h2 {
 
 .timestamp {
   color: var(--dim);
-  text-align: right;
   font-size: 0.85rem;
   margin-bottom: 1rem;
 }
@@ -62,29 +65,15 @@ h2 {
 
 .description {
   text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.button-row {
+  text-align: right;
 }
 
 button {
-  border: 2px solid var(--secondary-color);
-  border-radius: 5px;
-  background: none;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  padding: 10px;
-  margin: 1rem auto 0 auto;
-  display: block;
-}
-
-button a {
-  font-family: var(--secondary-font);
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-button a:hover {
-  color: var(--secondary-color);
+  font-size: 0.75rem;
 }
 
 @media (min-width: 700px) {

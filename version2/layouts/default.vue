@@ -117,6 +117,32 @@ strong {
   font-weight: 700px;
 }
 
+.button {
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.button:hover {
+  border-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.button a {
+  font-family: var(--secondary-font);
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.button:hover a {
+  color: var(--secondary-color);
+}
+
 @media (min-width: 1000px) {
   .wrapper {
     flex-direction: row;

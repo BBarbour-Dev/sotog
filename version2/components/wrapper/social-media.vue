@@ -47,4 +47,13 @@ li {
 li:not(:last-child) {
   margin-right: 0.5rem;
 }
+
+li a:link,
+a:visited {
+  color: var(--primary-color);
+}
+
+li a:hover {
+  color: var(--secondary-color);
+}
 </style>
