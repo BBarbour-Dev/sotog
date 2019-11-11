@@ -15,7 +15,7 @@
     />
     <div class="button-row">
       <button class="button">
-        <nuxt-link to="/updates"> Updates...</nuxt-link>
+        <nuxt-link to="/updates">All Updates...</nuxt-link>
       </button>
     </div>
   </div>
