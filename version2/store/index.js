@@ -5,7 +5,7 @@ export const state = () => ({
   allUpdates: [],
   allChapters: [],
   allGalleryImages: [],
-  authorInfo: {},
+  authorInfo: [],
   sanityConfig: {
     projectId: process.env.sanityProjectId,
     dataset: process.env.sanityDataset
@@ -21,6 +21,9 @@ export const mutations = {
   },
   addGalleryImages(state, galleryImages) {
     state.allGalleryImages = galleryImages;
+  },
+  addAuthorInfo(state, authorInfo) {
+    state.authorInfo = authorInfo;
   }
 };
 
@@ -29,6 +32,7 @@ export const actions = {
     commit('addUpdates', await fetchUpdates());
     commit('addChapters', await fetchChapters());
     commit('addGalleryImages', await fetchGalleryImages());
+    commit('addAuthorInfo', await fetchAuthorInfo());
   }
 };
 
@@ -78,6 +82,12 @@ async function fetchGalleryImages() {
       pageTitle: index === 0 ? 'Gallery' : `Gallery: Page ${index + 1}`
     };
   });
+}
+
+async function fetchAuthorInfo() {
+  const query = `*[_type == 'author']{aboutComic, bio, name, image{asset->{url}}}`;
+  const author = await client.fetch(query);
+  return [...author];
 }
 
 function chunk(arr, size) {
