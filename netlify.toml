@@ -1,0 +1,6 @@
+[build]
+publish = "dist"
+command = "npm run generate"
+
+[context.production]
+environment = { SANITY_PROJECT_ID = "ip44m8tu", SANITY_DATASET = "production" }
