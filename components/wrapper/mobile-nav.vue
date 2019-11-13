@@ -1,11 +1,6 @@
 <template>
   <div class="menu">
-    <div
-      class="menu-toggle"
-      :class="{ 'menu-dark': open }"
-      @click="toggleNav"
-      v-if="open"
-    >
+    <div class="menu-toggle" :class="{ 'menu-dark': open }" @click="toggleNav" v-if="open">
       <button>
         <i class="fas fa-times"></i>
       </button>
@@ -44,13 +39,18 @@ export default {
 <style scoped>
 .menu-toggle {
   position: fixed;
-  right: -100px;
-  top: -100px;
+  right: 0px;
+  top: 0px;
   z-index: 200;
   background-color: var(--secondary-color);
-  border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  border-radius: 0 0 0 100%;
+  -moz-border-radius: 0 0 0 100%;
+  -webkit-border-radius: 0 0 0 100%;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .menu-dark {
@@ -65,11 +65,9 @@ export default {
   color: var(--primary-background);
   border: none;
   padding: none;
-  margin: none;
-  position: absolute;
-  top: 114px;
-  left: 42px;
-  display: inline-block;
+  margin-bottom: 20%;
+  margin-right: 12%;
+  display: block;
   cursor: pointer;
 }
 
