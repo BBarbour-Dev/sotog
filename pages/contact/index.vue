@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <h1>Contact</h1>
-    <form action="/contact/submitted" method="POST" data-netlify="true">
+    <form
+      name="contact"
+      action="/contact/submitted"
+      method="POST"
+      data-netlify="true"
+    >
       <div class="group">
         <label for="name">Name</label>
         <input
@@ -42,14 +47,14 @@
 export default {
   head() {
     return {
-      title: "Contact"
+      title: 'Contact'
     };
   },
   data: function() {
     return {
-      name: "",
-      email: "",
-      message: ""
+      name: '',
+      email: '',
+      message: ''
     };
   },
   computed: {
