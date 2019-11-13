@@ -56,6 +56,8 @@ export default {
 
 .menu-toggle button {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: inherit;
   text-transform: uppercase;
   font-size: 2.5rem;
