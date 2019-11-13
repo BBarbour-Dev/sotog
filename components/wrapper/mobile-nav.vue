@@ -52,12 +52,13 @@ export default {
 
 .menu-dark {
   background: var(--primary-background);
+  box-shadow: none;
 }
 
 .menu-toggle button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
   background-color: inherit;
   text-transform: uppercase;
   font-size: 2.5rem;
