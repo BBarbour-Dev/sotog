@@ -43,9 +43,9 @@ export default {
   top: 0px;
   z-index: 200;
   background-color: var(--secondary-color);
-  margin-right: 5px;
-  margin-top: 5px;
-  padding: 5px;
+  margin-right: 0.35rem;
+  margin-top: 0.35rem;
+  padding: 0.35rem;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -65,6 +65,7 @@ export default {
   font-weight: 700;
   color: var(--primary-background);
   border: none;
+  margin: none;
   padding: none;
   display: inline-block;
   cursor: pointer;
