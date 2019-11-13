@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import navLinks from "./nav-links";
+import navLinks from './nav-links';
 export default {
-  name: "mobile-nav",
+  name: 'mobile-nav',
   components: {
     navLinks
   },
@@ -88,6 +88,8 @@ export default {
   height: 0;
   opacity: 0;
   visibility: hidden;
+  -webkit-transition: opacity 0.35s, visbility, 0.35s, height 0.35s;
+  -o-transition: opacity 0.35s, visbility, 0.35s, height 0.35s;
   transition: opacity 0.35s, visbility, 0.35s, height 0.35s;
   overflow: hidden;
   z-index: 100;
@@ -103,6 +105,8 @@ export default {
   position: relative;
   height: 70%;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: 2rem;
   font-weight: 700;

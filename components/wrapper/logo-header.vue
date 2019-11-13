@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import navLinks from "./nav-links";
-import socialMedia from "./social-media";
+import navLinks from './nav-links';
+import socialMedia from './social-media';
 
 export default {
-  name: "logo-header",
+  name: 'logo-header',
   components: {
     navLinks,
     socialMedia
@@ -42,15 +42,34 @@ export default {
 header {
   width: 100%;
   min-height: 85vh;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.1)),
+      to(rgba(0, 0, 0, 0.5))
+    ),
+    url('~assets/ravenwing.png');
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+    url('~assets/ravenwing.png');
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
-    url("~assets/ravenwing.png");
+    url('~assets/ravenwing.png');
   background-attachment: fixed;
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 2rem;
 }
@@ -110,6 +129,8 @@ header >>> .social-media {
 @media (min-width: 1000px) {
   header {
     min-height: 100%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
     background-position: left;
     background-size: contain;
@@ -125,6 +146,8 @@ header >>> .social-media {
   }
 
   header >>> .social-media {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
