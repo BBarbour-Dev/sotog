@@ -69,6 +69,7 @@ export default {
   margin: none;
   display: block;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .menu-dark button {
