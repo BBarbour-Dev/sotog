@@ -43,13 +43,10 @@ export default {
   top: 0px;
   z-index: 200;
   background-color: var(--secondary-color);
-  height: 60px;
-  width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-right: 5px;
   margin-top: 5px;
+  padding: 5px;
+  text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -65,8 +62,7 @@ export default {
   color: var(--primary-background);
   border: none;
   padding: none;
-  margin: none;
-  display: block;
+  display: inline-block;
   cursor: pointer;
 }
 
