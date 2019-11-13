@@ -43,9 +43,8 @@ export default {
   top: 0px;
   z-index: 200;
   background-color: var(--secondary-color);
-  height: 75px;
-  width: 75px;
-  border-radius: 50%;
+  height: 60px;
+  width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +68,6 @@ export default {
   margin: none;
   display: block;
   cursor: pointer;
-  border-radius: 50%;
 }
 
 .menu-dark button {
