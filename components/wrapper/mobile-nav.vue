@@ -43,14 +43,15 @@ export default {
   top: 0px;
   z-index: 200;
   background-color: var(--secondary-color);
-  border-radius: 0 0 0 100%;
-  -moz-border-radius: 0 0 0 100%;
-  -webkit-border-radius: 0 0 0 100%;
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-right: 5px;
+  margin-top: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .menu-dark {
@@ -65,8 +66,7 @@ export default {
   color: var(--primary-background);
   border: none;
   padding: none;
-  margin-bottom: 20%;
-  margin-right: 12%;
+  margin: none;
   display: block;
   cursor: pointer;
 }
