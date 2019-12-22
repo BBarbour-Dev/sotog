@@ -1,6 +1,11 @@
 <template>
   <div class="menu">
-    <div class="menu-toggle" :class="{ 'menu-dark': open }" @click="toggleNav" v-if="open">
+    <div
+      class="menu-toggle"
+      :class="{ 'menu-dark': open }"
+      @click="toggleNav"
+      v-if="open"
+    >
       <button>
         <i class="fas fa-times"></i>
       </button>
@@ -45,7 +50,6 @@ export default {
   background-color: var(--secondary-color);
   margin-right: 0.35rem;
   margin-top: 0.35rem;
-  padding: 0.35rem;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -66,8 +70,8 @@ export default {
   color: var(--primary-background);
   border: none;
   margin: none;
-  padding: none;
-  display: inline-block;
+  padding: 0.5rem 1rem;
+  display: block;
   cursor: pointer;
 }
 
